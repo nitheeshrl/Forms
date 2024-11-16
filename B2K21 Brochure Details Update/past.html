@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="white_logo.png" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Brochure Update Requests</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="style 1.css" />
+    <link rel="stylesheet" type="text/css" href="style 2.css">
+    <style>
+         table .approve{
+            border-radius: 20px;
+            padding: 10px;
+            color: white;
+            font-weight: bolder;
+    background-color: green;
+    margin-right: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+ table .decline{
+    border-radius: 20px;
+    padding: 10px;
+    color: white;
+    font-weight: bolder;
+    background-color: red;
+    margin-right: 20px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .tablebee{
+    display: none;
+}
+.btn{
+    background-color:#182d8b;
+    margin-right: 20px;
+    text-decoration: none;
+    color: white;
+    border-radius: 20px;
+    padding: 20px;
+    cursor: pointer;
+  }
+.btn1{
+    background-color:#182d8b;
+height: 40px;
+    text-decoration: none;
+    color: white;
+    
+    border-radius: 20px;
+    padding:12px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+    </style>
+</head>
+
+<body>
+
+    <section class="header" >
+  
+    <div style="width: 20%;">
+     
+    </div>
+    <div style="display: flex;justify-content: center;align-items: center;">
+      <img src="white_logo.png" alt="">
+    <h1>NIFTEM-T Placement Cell</h1>
+    </div>
+
+    <div class="logname" >
+    <p ><span id="mname"></span></p>
+
+    </div>
+    </section>
+    <main style="margin-top: 30px;" class="table" id="customers_table">
+        <section class="table__header">
+            <h1>Past Update Requests</h1>
+            <a class="btn1" id="pbtn" href="index.html?ui=" >Active Requests</a>
+            <div class="input-group">
+                <input  type="search" placeholder="Search..." >
+                <img src="images/search.png" alt="">
+            </div>
+
+        </section>
+
+       <section id="tablebee" class="tablebee">         
+        <section  class="table__body" >
+            <table>
+                <thead>
+                    <tr>
+                        <th><b>Request ID</b></th>
+                        <th class="arp"><b>Status</b></th>
+                        <th><b>Name of the Student</b></th>
+                        <th><b>Content to be changed</b></th>
+                        <th><b>Old Data</b></th>
+                        <th><b>New Data</b></th>
+                        
+                    </tr>
+                    
+                </thead>
+                <tbody id="tabdetails" >
+
+                </tbody>
+            </table>
+
+        </section>
+    </section> 
+
+    <section class="msg" >
+
+        <h1 style="text-align: center;"></h1>
+        <div   id="dfiled" style="align-content:normal; margin-left: 0px;margin-right: auto; margin-top: 30px;"><p style="text-align: left;">
+            <div ></div> <span id = "status"></span></p></div>
+            </p>
+            </section>
+            <section style="height: 100px; display: flex;justify-content: center;">
+      
+            </section>
+    </main>
+    <div id="load" class="load" > 
+        <div class="loader" id="loader"> 
+      
+          </div> 
+          <div
+            id="message"
+          class="message"
+          style="width: 350px;"
+            ></div>
+        </div>      
+  
+   
+    <script src="script.js"></script>
+    <script src="script1.js"></script>
+ <script>
+          function statuscolor() {
+        var statusbars = document.getElementsByClassName("statusbar");
+        for (var s=0; s<statusbars.length;s++){
+          console.log(statusbars[s])
+          if(statusbars[s].textContent =="Approved & Updated"){
+            statusbars[s].style="color: green;"
+          }
+          else if(statusbars[s].textContent =="Declined"){
+            statusbars[s].style="color: red;"
+          }
+        }
+        }
+          var uname ;
+          const keyvalues = window.location.search;
+      const value = new URLSearchParams(keyvalues);
+      const idvalue = value.get('ui');
+
+      console.log(    document.getElementById("pbtn").href)
+      var uids = [
+        "398",
+        "756",
+        "652",
+        "235",
+        "453",
+       "648",
+        "378",
+        "345",
+        "904",
+        "413",
+        "254",
+        "890"
+    ];
+    var inames = [
+    'Anandha Keerthy M',
+    'Anindit Bizy Nair',
+    'David Evander Jebson S',
+    'Keerthika P',
+    'Nitheesh R L',
+    'Shivam Jha',
+    'Srinithi C P',
+    'Subbu Krishna Sharma GM ',
+    'Yuvashreekantham R',
+    'R B Ramyaa',
+    'Anjali S',
+    'Mathangi G'
+    ]
+    for (var i = 0; i < uids.length; i++) {
+    
+      if (idvalue == uids[i]){
+    uname = inames[i];
+      }
+    }
+    console.log(uname)
+    document.getElementById("pbtn").href += idvalue;
+    document.getElementById("mname").innerHTML = "<b>Logged Member:</b> "+uname;
+    if (idvalue == undefined||uname==undefined){
+      alert("Update through the given link");
+      window.location="unauthorised.html"
+    }
+    document.getElementById("load").style.display="initial";
+            document.getElementById("loader").style.display="block"; 
+            document.getElementById("message").textContent = "Fetching requests....";
+       function fetchd (){
+        console.log("fetch")
+        var details ="";
+        fetch(
+     
+     "https://script.google.com/macros/s/AKfycbwI-eyM8zJlJK25nHhPuMqwWAUWneM1soIfEP9dBD3Q_Cf2ft8Movo8LrpZQ2u0uyT0-Q/exec",
+     {
+       redirect: "follow",
+       method: "POST",
+       body: uname,
+       headers: {
+         "Content-Type": "text/plain;charset=utf-8",
+       },
+     }
+    )
+    
+     .then(function (response) {
+    
+       // Check if the request was successful
+       if (response) {
+    
+         return response; // Assuming your script returns JSON response
+       } else {
+         throw new Error("Failed to fetch.");
+       }
+     })
+     .then(async function (data) {
+    const result1 = await data.json();
+    
+    var r = result1.data2;
+    console.log(r);
+    for(var k=0; k<r.length;k++){
+        var detail ="";
+    
+        var head = r[k][2].split("<br>");
+        var olddata = r[k][3].split("<br>");
+        var newdata = r[k][4].split("<br>");
+        for(var j=1; j<head.length;j++){
+          console.log(head.length-1)
+          console.log(head)
+          console.log(j)
+
+          if (j==head.length-1 && j==1){
+            var spanno1 = head.length ;
+                var spanno = spanno1 -1;
+                console.log(spanno)
+                if(head[j].includes("CV") || head[j].includes("Files")){
+              console.log("inn")
+              detail += '<tr class="lasttr"><td rowspan="'+spanno+'">'+r[k][0]+'</td><td class="statusbar" rowspan="'+spanno+'">'+r[k][5]+'</td><td rowspan="'+spanno+'">'+r[k][1]+'</td> <td><b>'+head[j]+'</b></td><td><a class="btn1" href="'+olddata[j]+'" target="_blank">View</a></td><td><a class="btn1" href="'+newdata[j]+'" target="_blank">View</a></td> </tr>';
+            }
+
+            else{
+                detail += '<tr class="lasttr"><td rowspan="'+spanno+'">'+r[k][0]+'</td><td class="statusbar" rowspan="'+spanno+'">'+r[k][5]+'</td><td rowspan="'+spanno+'">'+r[k][1]+'</td> <td><b>'+head[j]+'</b></td><td>'+olddata[j]+'</td><td>'+newdata[j]+'</td> </tr>';
+            } 
+          }
+            else   if (j==1){
+                var spanno1 = head.length ;
+                var spanno = spanno1 -1;
+                console.log(spanno)
+                if(head[j].includes("CV") || head[j].includes("Files")){
+              console.log("inn")
+              detail += '<tr><td rowspan="'+spanno+'">'+r[k][0]+'</td><td class="statusbar" rowspan="'+spanno+'">'+r[k][5]+'</td><td rowspan="'+spanno+'">'+r[k][1]+'</td> <td><b>'+head[j]+'</b></td><td><a class="btn1" href="'+olddata[j]+'" target="_blank">View</a></td><td><a class="btn1" href="'+newdata[j]+'" target="_blank">View</a></td> </tr>';
+            }
+
+            else{
+                detail += '<tr><td rowspan="'+spanno+'">'+r[k][0]+'</td><td class="statusbar" rowspan="'+spanno+'">'+r[k][5]+'</td><td rowspan="'+spanno+'">'+r[k][1]+'</td> <td><b>'+head[j]+'</b></td><td>'+olddata[j]+'</td><td>'+newdata[j]+'</td> </tr>';
+            }
+          }
+          else if (j==head.length-1){
+            var spanno1 = head.length ;
+                var spanno = spanno1 -1;
+                console.log(spanno)
+                if(head[j].includes("CV") || head[j].includes("Files")){
+              console.log("inn")
+              detail +='<tr class="lasttr"><td><b>'+head[j]+'</b></td> <td><a class="btn1" href="'+olddata[j]+'" target="_blank">View</a></td><td><a class="btn1" href="'+newdata[j]+'" target="_blank">View</a></td></tr>';
+            }
+
+            else{
+              detail +='<tr class="lasttr"><td><b>'+head[j]+'</b></td> <td>'+olddata[j]+'</td><td>'+newdata[j]+'</td></tr>';
+            }
+                }
+
+            else{
+              
+            if(head[j].includes("CV") || head[j].includes("Files")){
+              console.log("inn")
+              detail +='<tr><td><b>'+head[j]+'</b></td> <td><a class="btn1" href="'+olddata[j]+'" target="_blank">View</a></td><td><a class="btn1" href="'+newdata[j]+'" target="_blank">View</a></td></tr>';
+            }
+    else{
+               detail +='<tr><td><b>'+head[j]+'</b></td> <td>'+olddata[j]+'</td><td>'+newdata[j]+'</td></tr>';
+    }
+            }
+        }
+    
+    console.log(detail)
+    console.log(details) 
+        details = details + detail;
+        console.log(details) 
+    }
+    console.log(details)
+    if (details!==""){
+    document.getElementById("tabdetails").innerHTML = details;
+    document.getElementById("tablebee").style.display = "initial";
+    }
+    else{
+      document.getElementById("tablebee").style.display = "none";
+        document.getElementById("status").style.display = "initial";
+        document.getElementById("status").textContent = "No Active Update Requests";
+    }
+    document.getElementById("loader").style.display="none"; 
+                    document.getElementById("message").textContent = "";
+                    document.getElementById("load").style.display = "none";
+                    statuscolor();
+            
+    })
+    
+    .catch(function (error) {
+    // Handle errors, you can display an error message here
+    console.error(error);
+    document.getElementById("loader").style.display="none"; 
+    document.getElementById("message").textContent =
+    "Failed to fetch.";
+    document.getElementById("message").style.display = "block";
+    });
+       }
+       fetchd ();
+    
+   
+
+    </script>
+</body>
+
+</html>

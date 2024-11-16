@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="widthdevice-width, initial-scale=1">
+    <link rel="icon" href="white_logo.png" type="image/x-icon">
+    <title>Visionary Voices - 1 Feedback Form</title>  
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      window.onload=getstatus();
+       function getstatus(){
+   const url = "https://script.google.com/macros/s/AKfycbxR9JjLW-_xKlNmW7-2OmoqYeHLkfZn45DJL-kazZ4Nl_gGqbUNwJk96DmvpyGzxAPp/exec" 
+   var val = "Visionary Voices - 1 Feedback Form";
+   console.log(val)
+   fetch(`${url}?header=${val}`)
+       .then((response) => response.json())
+       .then(({ data }) => {
+           if (data == "Live"){
+   
+               document.getElementById("frqa").style.display="initial";
+               document.getElementById("ll").textContent="";
+   
+               }
+               else if (data == "Inactive"){
+                 document.getElementById("frqa").style.display="none";
+                 window.location='end.html';
+               }
+       })
+       .catch((error) => console.error('!!!!!!!!', error));
+   }
+   </script>
+</head>    
+<body>
+<section class="header">
+<div>
+<img src="white_logo.png" alt="">
+</div>
+<div>
+<h1>NIFTEM-T Placement Cell</h1>
+</div>
+</section>
+<section >
+<div class="form-container">
+<script type="text/javascript">var submitted=false </script>
+<iframe name="hiddenConfirm" id="hiddenConfirm" style="display: none;" onload="if(submitted){
+    window.location='submission.html'; }"></iframe>
+    <form id="form" class="container m-4 pl-4" method="POST">
+<h1 style="text-align: center;"> Visionary Voices - 1 <br> Shaping the Future  <br><br>Dr. Jeyam Subbiah  </h1>
+<img style=" width: 90%;margin-left: 10px;" class="i" src="Lecture 1 Backdrop Final 2.png" alt="">
+<h2 style="text-align: center;"> Feedback form </h2>
+<h3 id="ll" style="text-align: center;">Form Loading....</h3>
+<div id="frqa" class="frqa">
+<div class="form-element">
+<span class="q">Please give your feedback regarding today's session</span>
+<input type="text" name="Feedback" required placeholder="Enter your feedback"/>
+</div>
+
+<button style="margin-top: 20px;" type="submit" id="bt"> 
+Submit
+</button> 
+<div id="load" class="load" > 
+  <div class="loader" id="loader"> 
+
+    </div> 
+    <div
+      id="message"
+    class="message"
+      ></div>
+  </div> 
+  </div> 
+</div>
+<script>
+let form = document.querySelector("form");
+form.addEventListener('submit',()=>{ {
+  document.getElementById("load").style.display="initial";
+  document.getElementById("loader").style.display="block"; 
+  document.getElementById("bt").style.display="none";
+}})
+document.getElementById("form").addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent the default form submission
+        document.getElementById("message").textContent = "Submitting..";
+        document.getElementById("message").style.display = "block";
+        document.getElementById("bt").disabled = true;
+
+        // Collect the form data
+        var formData = new FormData(this);
+        var keyValuePairs = [];
+        for (var pair of formData.entries()) {
+          keyValuePairs.push(pair[0] + "=" + pair[1]);
+        }
+
+        var formDataString = keyValuePairs.join("&");
+
+        // Send a POST request to your Google Apps Script
+        fetch(
+          "https://script.google.com/macros/s/AKfycbxYePgSjP1eM650_1WwPkktT8LWIkZbcw-YIZx4LYx0JBTUI4_iOAO0AJbTB3C3cwGZ/exec",
+          {
+            redirect: "follow",
+            method: "POST",
+            body: formDataString,
+            headers: {
+              "Content-Type": "text/plain;charset=utf-8",
+            },
+          }
+        )
+          .then(function (response) {
+            // Check if the request was successful
+            if (response) {
+              return response; // Assuming your script returns JSON response
+            } else {
+              throw new Error("Failed to submit the form.");
+            }
+          })
+          .then(function (data) {
+            // Display a success message
+            document.getElementById("bt").disabled = false;
+            document.getElementById("form").reset();
+            window.location='submission.html';
+
+
+            setTimeout(function () {
+              document.getElementById("message").textContent = "";
+              document.getElementById("message").style.display = "none";
+            }, 2600);
+          })
+          .catch(function (error) {
+            // Handle errors, you can display an error message here
+            console.error(error);
+            document.getElementById("message").textContent =
+              "An error occurred while submitting the form.";
+            document.getElementById("message").style.display = "block";
+          });
+      });
+</script>
+</section>
+</body>
+</html>

@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="widthdevice-width, initial-scale=1">
+    <link rel="icon" href="white_logo.png" type="image/x-icon">
+    <title>Update Brochure Details</title>  
+    <link rel="stylesheet" href="style.css" />
+
+</head>    
+<body>
+ <script>
+  // Set the target date and time for the countdown
+const targetDate = new Date("September 31, 2024 15:00:00").getTime();
+
+// Update the countdown every second
+const countdownInterval = setInterval(() => {
+  // Get the current date and time
+  const now = new Date().getTime();
+  timeDifference = targetDate - now;
+  console.log(timeDifference);
+  if (timeDifference < 0) {
+window.location ="end.html";
+  }
+}, 1000);
+
+ </script>
+<section class="header">
+<div>
+<img src="white_logo.png" alt="">
+</div>
+<div>
+<h1>NIFTEM-T Placement Cell</h1>
+</div>
+</section>
+<section >
+<div class="form-container">
+<script type="text/javascript">var submitted=false </script>
+<form id="form" class="container m-4 pl-4" name="form"  >
+<h1 style="text-align: center;"> Update Brochure Details </h1>
+
+<div id="frqa" class="frqa">
+  <section class="step1" id="step1">
+
+  
+<div class="form-element">
+<span class="q">Name</span>
+<select name="Name" id="Name" onchange="matchnameid()" required placeholder="Select your name">
+<option value="">Select your name</option>
+
+</select>
+
+</div>
+<div class="form-element">
+<span class="q">ID Number</span>
+<input readonly type="text" name="ID Number" id="ID Number" required placeholder="Enter your ID number" />
+</div>
+<div style="display: flex;flex-direction: row;margin-top: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="Check" value="Email address" oninput="checken()">
+   <span style="margin-left: 20px;">Update Email address</span>
+</div>
+<div class="form-element"id="Email address V" style="display: none; flex-direction: column;">
+<span class="q">Email address</span>
+<input  type="email" name="Email address" id="Email address"  placeholder="Enter your email"/>
+</div>
+
+<div style="display: flex;flex-direction: row;margin-top: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="Check" value="Skills" oninput="checken()">
+   <span style="margin-left: 20px;">Edit Skills</span>
+</div>
+<div id="Skills V" style="display: none; flex-direction: column;">
+<div class="form-element"  >
+<span class="q">Skill Set 1</span>
+<input type="text" id="Skill Set 1" name="Skills"  placeholder="Enter your Skills" />
+</div>
+<div class="form-element"  >
+<span class="q">Skill Set 2</span>
+<input type="text" id="Skill Set 2" name="Skills"  placeholder="Enter your Skills" />
+</div>
+<div class="form-element"  >
+<span class="q">Skill Set 3</span>
+<input type="text" id="Skill Set 3" name="Skills"  placeholder="Enter your Skills" />
+</div>
+<div class="form-element"  >
+<span class="q">Skill Set 4</span>
+<input type="text" id="Skill Set 4" name="Skills"  placeholder="Enter your Skills" />
+</div>
+<div class="form-element"  >
+<span class="q">Skill Set 5</span>
+<input type="text" id="Skill Set 5" name="Skills"  placeholder="Enter your Skills" />
+</div>
+</div>
+<div style="display: flex;flex-direction: row;margin-top: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="Check" value="Trainings and certifications" oninput="checken()">
+   <span style="margin-left: 20px;">Edit Trainings and certifications</span>
+</div>
+<div id="Trainings and certifications V" style="display: none; flex-direction: column;">
+<div class="form-element">
+<span class="q">Trainings and certifications</span>
+<input type="text" name="Trainings and certifications" id="Trainings and certifications" onchange="checktupload()"  placeholder="Enter your Trainings and certifications" />
+</div>
+
+<div class="form-element">
+<span class="q">Upload your Trainings and certifications Files</span>
+<div id="Trainings and certifications Files N"></div>
+<input id="i2" type="file" accept=".pdf,.PDF" name="file" width="10" height="100"/>
+<input id="Trainings and certifications File" type="hidden" name="Trainings and certifications Files Link" value=""/>
+<span style="color: red;font-size: 12px;">Compile all files in one pdf</span>
+</div>
+</div>
+<div style="display: flex;flex-direction: row;margin-top: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="Check" value="Internships" oninput="checken()">
+   <span style="margin-left: 20px;">Edit Internships</span>
+</div>
+<div id="Internships V" style="display: none; flex-direction: column;">
+<div class="form-element">
+<span class="q">Internship 1</span>
+<input type="text" name="Internships" id="Internship 1" onchange="checkiupload()"  placeholder="Enter your Internships" />
+</div>
+<div class="form-element">
+<span class="q">Internship 2</span>
+<input type="text" name="Internships" id="Internship 2" onchange="checkiupload()"  placeholder="Enter your Internships" />
+</div>
+<div class="form-element">
+<span class="q">Internship 3</span>
+<input type="text" name="Internships" id="Internship 3" onchange="checkiupload()"  placeholder="Enter your Internships" />
+</div>
+<div class="form-element">
+<span class="q">Internship 4</span>
+<input type="text" name="Internships" id="Internship 4" onchange="checkiupload()"  placeholder="Enter your Internships" />
+</div>
+<div class="form-element">
+<span class="q">Internship 5</span>
+<input type="text" name="Internships" id="Internship 5" onchange="checkiupload()"  placeholder="Enter your Internships" />
+</div>
+<div class="form-element" >
+<span class="q">Upload your Internships Files</span>
+<div id="Internships Files N"></div>
+<input id="i3" type="file" accept=".pdf,.PDF" name="file" width="10" height="100"/>
+<input id="Internships File" type="hidden" name="Internships Files Link" value=""/>
+<span style="color: red;font-size: 12px;">Compile all files in one pdf</span>
+</div>
+</div>
+<div style="display: flex;flex-direction: row;margin-top: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="Check" value="Known Languages" oninput="checken()">
+   <span style="margin-left: 20px;">Edit Known Languages</span>
+</div>
+<div class="form-element"id="Known Languages V" style="display: none; flex-direction: column;">
+<span class="q">Known Languages</span>
+<input type="text" name="Known Languages" id="Known Languages"  placeholder="Enter your Known Language" />
+</div>
+<div style="display: flex;flex-direction: row;margin-top: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="Check" value="Project title" oninput="checken()">
+   <span style="margin-left: 20px;">Edit Project title</span>
+</div>
+<div class="form-element"id="Project title V" style="display: none; flex-direction: column;">
+<span class="q">Project title</span>
+<input type="text" name="Project title" id="Project title"  placeholder="Enter your Project title" />
+</div>
+<div style="display: flex;flex-direction: row;margin-top: 20px; margin-bottom: 10px;">
+  <input type="checkbox" class="Check" value="CV" oninput="checken()">
+   <span style="margin-left: 20px;">Update CV</span>
+</div>
+<div class="form-element"id="CV V" style="display: none; flex-direction: column;">
+<span class="q">Upload the CV</span>
+<div id="CV N"></div>
+<input id="i1" type="file" accept=".pdf,.PDF" name="file" width="10" height="100" onchange="chc"/>
+<input id="CV File" type="hidden" name="CV D.link" value=""/>
+
+</div>
+<button style="margin-top: 20px; width: 100%;" type="button" id="bt" onclick="submitentry()"> 
+Update details
+</button> 
+<a href=""></a>
+    <div id="load" class="load" > 
+  <div class="loader" id="loader"> 
+
+    </div> 
+    <div
+      id="message"
+    class="message"
+      ></div>
+  </div> 
+
+</section>
+</div>
+    </form>
+</div>
+</section>
+<script>
+  var uname ;
+  var ent = "";
+  var qent ="";
+  const keyvalues = window.location.search;
+  const value = new URLSearchParams(keyvalues);
+  const idvalue = value.get('ui');
+  var uids = [
+   "648"
+];
+var inames = [
+'Shivam Jha'
+]
+for (var i = 0; i < uids.length; i++) {
+
+  if (idvalue == uids[i]){
+uname = inames[i];
+console.log(document.getElementById("nameadd"));
+if (idvalue == "413"){
+ var namelist =[
+ 'Bommi Durga Naga Sai Sri Sruthileena',
+'Damini H S',
+'Gokul Raj R',
+'Midhuna Kurian',
+'Parkhe Prajwal Anilkumar',
+'Praveena B',
+'R B Ramyaa',
+'Sathishwaran S',
+'Vidhyadharan A',
+'Yogesh M A'
+ ];
+ addoptions (namelist);
+}
+else if (idvalue == "254"){
+  var namelist =[
+  'Anjali S',
+'Anshida P K',
+'Hari Priya J',
+'Harish S',
+'Hayanthika M S',
+'Irfana Z',
+'Kadimi Lakshmi Devi',
+'Karthick Ajay B',
+'Kolli Venkata Naga Mallikarjuna Reddy',
+'Nandana M',
+'Shaliha A',
+'Sruti Chandra',
+'Sushmithasri R'
+  ];
+  addoptions (namelist);
+}
+else if (idvalue == "890"){
+  var namelist=[
+  'Abhijith K',
+'Ishwarya Lakshmi S',
+'Joseph P J',
+'Mani Bharathi G',
+'Manikandan T',
+'Mathangi G',
+'Mulukuri Naveena',
+'Muthumeena J',
+'Rajasri C',
+'Shanmugapriya R',
+'Srivigneswar S',
+'Sujithra M',
+'Trivedi Nidhi Deepak'
+  ];
+  addoptions (namelist);
+}
+else if (idvalue == "398"){
+  var namelist=[
+  'Akash B',
+'Chitturi Rohith',
+'Himavanth R',
+'Kota Lakshmi Sanjana',
+'Mohamed Tharif N J',
+'Padmaja M',
+'Anandha Keerthy M'
+  ];
+  addoptions (namelist);
+}
+else if (idvalue == "756"){
+  var namelist=[
+  'Anindit Bizy Nair',
+'Chandrika Devendrappa',
+'Gautam Nayak',
+'Jenish Daniel B',
+'Lakshmi Narayanan S',
+'Rakshithapriya S',
+'Srivatsan V'
+  ];
+  addoptions (namelist);
+}
+else if (idvalue == "652"){
+  var namelist=[
+  'Aishwarya Lakshmi S',
+'David Evander Jebson S',
+'Guberavishnu S',
+'Kisha M',
+'Merla A P',
+'Pranav Nanda Kishore',
+'Yadla Ganesh Babu',
+'Avantika C',
+'Diya Dharshini S',
+'Joshua Charles',
+'Mohannath Shroff J',
+'Punithavathi D',
+'Subbu Krishna Sharma GM ',
+'Vemula Uharika'
+  ];
+  addoptions (namelist);
+}
+else if (idvalue == "235"){
+  var namelist=[
+  'Ajitesh S',
+'Ethaya D',
+'Keerthika P',
+'Muthuraja K',
+'Santhoshkumar P',
+'Surendar S',
+'Vishnu Varthan T'
+  ];
+  addoptions (namelist);
+}
+else if (idvalue == "453"){
+  var namelist=[
+  'Aarthi A',
+'Nitheesh R L',
+'Dhanaselvam KR',
+'K Kabilan',
+'Lakshmi Sruthi L',
+'Nithish J P',
+'Sri Harini S'
+  ];
+  addoptions (namelist);
+}
+else if (idvalue == "648"){
+  var namelist=[
+  'Amirtha Varshini A',
+'Anusha R',
+'Cubarani Η',
+'Guguloth Sridhar',
+'Karyamsetty Worship',
+'Lavudya Sai Kumar',
+'Shivam Jha'
+  ];
+  addoptions (namelist);
+}
+else if (idvalue == "378"){
+  var namelist=[
+  'Ginu Robtus R',
+'Mahabir Prasad Swain',
+'Mudavath Anjali',
+'J Sanjeeth',
+'Srinithi C P',
+'Suman Kumar',
+'Tippaleti Srujana'
+  ];
+  addoptions (namelist);
+}
+else if (idvalue == "345"){
+  var namelist=[
+  'Avantika C',
+'Diya Dharshini S',
+'Joshua Charles',
+'Mohannath Shroff J',
+'Punithavathi D',
+'Subbu Krishna Sharma GM ',
+'Vemula Uharika'
+  ];
+  addoptions (namelist);
+}
+else if (idvalue == "904"){
+  var namelist=[
+  'Archana P',
+'Diana Celcia R',
+'Jegan P',
+'Kevin Francis',
+'MA Monesh Ram',
+'Sivashree ',
+'Yuvashreekantham R'
+  ];
+  addoptions (namelist);
+}
+  }
+  function addoptions (namess){
+  var select = document.getElementById('Name');
+  for (var i = 0; i<=namess.length - 1; i++){
+    var opt = document.createElement('option');
+    opt.value = namess[i];
+    opt.innerHTML = namess[i];
+    select.appendChild(opt);
+}
+  }
+
+  
+  console.log(uname)
+
+}
+if (idvalue == undefined||uname==undefined){
+  alert("Update through the given link");
+  window.location="unauthorised.html"
+}
+function submitentry(){
+var nnnnaamme = document.getElementById("Name").value;
+  sessionStorage.setItem("name",nnnnaamme);
+  var fils = document.getElementsByClassName("Check");
+  var che = "ok";
+
+  for (var i = 0; i<fils.length;i++){
+    console.log(fils[i])
+    if (fils[i].checked){
+    var nam = fils[i].value;
+    console.log(nam)
+    var cnam;
+    if (nam == "CV"){
+      cnam = "i1";
+    }
+    else if (nam == "Internships"){
+      cnam = "Internship 1";
+    }
+    else if (nam == "Skills"){
+      cnam = "Skill Set 1";
+    }
+    else{
+      cnam = nam;
+    }
+
+    console.log(cnam)
+    var vnam = document.getElementById(cnam).value;
+    console.log(vnam)
+    if (vnam !== ""){
+    if (nam == "Trainings and certifications"){
+      var valup = "/iiff/"+document.getElementById(cnam).value;
+    ent = ent + valup; 
+    var head = "/ssww/"+nam;
+    qent = qent + head;
+    console.log(valup)
+    if (document.getElementById(nam+" File").value == ""){
+      alert("Upload the "+nam+' Files');
+      che = "not ok"
+    }
+    else{
+    var valup1 = "/iiff/"+document.getElementById(nam+" File").value;
+    ent = ent + valup1; 
+    var head1 = "/ssww/"+nam+" Files";
+    qent = qent + head1;
+    console.log(valup1)
+    }
+    }
+    else if (nam == "Internships"||nam == "Skills"){
+      var nos = document.getElementsByName(nam);
+      for(var j=0;j<nos.length;j++){  
+    var valup = "/iiff/"+nos[j].value;
+    ent = ent + valup; 
+    var head = "/ssww/"+nos[j].id;
+    qent = qent + head;
+    console.log(valup)
+      }
+      if (nam == "Internships"){
+
+      
+    if (document.getElementById(nam+" File").value == ""){
+      alert("Upload the "+nam+' Files');
+      che = "not ok"
+    }
+    else{
+    var valup1 = "/iiff/"+document.getElementById(nam+" File").value;
+    ent = ent + valup1; 
+    var head1 = "/ssww/"+nam+" Files";
+    qent = qent + head1;
+    console.log(valup1)
+    }
+  }
+    }
+    else if (nam == "CV"){
+      if (document.getElementById(nam+" File").value == ""){
+      alert("Upload the "+nam+' Files');
+      che = "not ok"
+    }
+    else{
+    var valup = "/iiff/"+document.getElementById(nam+" File").value;
+    ent = ent + valup; 
+    var head = "/ssww/"+nam;
+    qent = qent + head;
+    console.log(valup)
+    }
+}  
+else{
+    var valup = "/iiff/"+document.getElementById(cnam).value;
+    ent = ent + valup; 
+    var head = "/ssww/"+nam;
+    qent = qent + head;
+    console.log(valup)
+}
+        var name = document.getElementById("Name").value;
+        var id = document.getElementById("ID Number").value;
+
+    if(name == ""){
+    alert("Select the name");
+  }
+}
+else{
+  alert("Enter the "+nam);
+  che = "not ok";
+}
+
+}
+  }
+if (che == "ok"){
+
+
+document.getElementById("load").style.display="initial";
+document.getElementById("loader").style.display="block"; 
+document.getElementById("message").textContent = "Submitting...";
+var formDataString = name+"%"+id+"%"+ent+"%"+qent+"%"+uname;
+console.log(formDataString);
+sessionStorage.setItem("datastring",formDataString);
+
+    // Send a POST request to your Google Apps Script
+    fetch(
+      "https://script.google.com/macros/s/AKfycbwG24g1uDTOOWM7OLhJ95IO3b7ya_-r8OODFn08uWjLhrdA0-DLFaPptmySb8W03NTOTw/exec",
+      {
+        redirect: "follow",
+        method: "POST",
+        body: formDataString,
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8",
+        },
+      }
+    )
+
+      .then(function (response) {
+
+        // Check if the request was successful
+        if (response) {
+     
+          return response; // Assuming your script returns JSON response
+        } else {
+          throw new Error("Failed to submit the form.");
+        }
+      })
+      .then(async function (data) {
+        const result1 = await data.json();
+  
+var cr = result1.data2;
+console.log(cr)
+sessionStorage.setItem("stat","not sent");
+document.getElementById("bt").disabled = false;
+    document.getElementById("form").reset();
+    window.location='submission.html';
+
+      })
+
+      .catch(function (error) {
+        // Handle errors, you can display an error message here
+        console.error(error);
+        document.getElementById("message").textContent =
+          "An error occurred while updating.";
+        document.getElementById("message").style.display = "block";
+      });
+    }
+
+          
+        }
+
+          function matchnameid(){
+  let id = document.getElementById('ID Number');
+  let name = document.getElementById('Name').value;
+  var names =['Aarthi A',
+'Aishwarya Lakshmi S',
+'Ajitesh S',
+'Akash B',
+'Amirtha Varshini A',
+'Anandha Keerthy M',
+'Anindit Bizy Nair',
+'Anusha R',
+'Archana P',
+'Avantika C',
+'Chandrika Devendrappa',
+'Chitturi Rohith',
+'Cubarani Η',
+'David Evander Jebson S',
+'Dhanaselvam KR',
+'Diana Celcia R',
+'Diya Dharshini S',
+'Ethaya D',
+'Gautam Nayak',
+'Ginu Robtus R',
+'Guberavishnu S',
+'Guguloth Sridhar',
+'Himavanth R',
+'Jegan P',
+'Jenish Daniel B',
+'Joshua Charles',
+'K Kabilan',
+'Karyamsetty Worship',
+'Keerthika P',
+'Kevin Francis',
+'Kisha M',
+'Kota Lakshmi Sanjana',
+'Lakshmi Narayanan S',
+'Lakshmi Sruthi L',
+'Lavudya Sai Kumar',
+'Mahabir Prasad Swain',
+'Merla A P',
+'Mohamed Tharif N J',
+'Mohannath Shroff J',
+'MA Monesh Ram',
+'Mudavath Anjali',
+'Muthuraja K',
+'Nitheesh R L',
+'Nithish J P',
+'Padmaja M',
+'Pranav Nanda Kishore',
+'Punithavathi D',
+'Rakshithapriya S',
+'J Sanjeeth',
+'Santhoshkumar P',
+'Shivam Jha',
+'Sivashree ',
+'Sri Harini S',
+'Srinithi C P',
+'Srivatsan V',
+'Subbu Krishna Sharma GM ',
+'Suman Kumar',
+'Surendar S',
+'Tippaleti Srujana',
+'Vemula Uharika',
+'Vishnu Varthan T',
+'Yadla Ganesh Babu',
+'Yuvashreekantham R',
+'Bommi Durga Naga Sai Sri Sruthileena',
+'Damini H S',
+'Gokul Raj R',
+'Midhuna Kurian',
+'Parkhe Prajwal Anilkumar',
+'Praveena B',
+'R B Ramyaa',
+'Sathishwaran S',
+'Vidhyadharan A',
+'Yogesh M A',
+'Anjali S',
+'Anshida P K',
+'Hari Priya J',
+'Harish S',
+'Hayanthika M S',
+'Irfana Z',
+'Kadimi Lakshmi Devi',
+'Karthick Ajay B',
+'Kolli Venkata Naga Mallikarjuna Reddy',
+'Nandana M',
+'Shaliha A',
+'Sruti Chandra',
+'Sushmithasri R',
+'Abhijith K',
+'Ishwarya Lakshmi S',
+'Joseph P J',
+'Mani Bharathi G',
+'Manikandan T',
+'Mathangi G',
+'Mulukuri Naveena',
+'Muthumeena J',
+'Rajasri C',
+'Shanmugapriya R',
+'Srivigneswar S',
+'Sujithra M',
+'Trivedi Nidhi Deepak'
+]
+var ids = ['2021U1001',
+'2021U1002',
+'2021U1003',
+'2021U1004',
+'2021U1005',
+'2021U1007',
+'2021U1008',
+'2021U1009',
+'2021U1010',
+'2021U1011',
+'2021U1012',
+'2021U1014',
+'2021U1015',
+'2021U1016',
+'2021U1017',
+'2021U1018',
+'2021U1019',
+'2021U1020',
+'2021U1021',
+'2021U1022',
+'2021U1024',
+'2021U1025',
+'2021U1027',
+'2021U1028',
+'2021U1029',
+'2021U1030',
+'2021U1031',
+'2021U1032',
+'2021U1033',
+'2021U1034',
+'2021U1035',
+'2021U1036',
+'2021U1037',
+'2021U1038',
+'2021U1039',
+'2021U1040',
+'2021U1041',
+'2021U1042',
+'2021U1043',
+'2021U1044',
+'2021U1046',
+'2021U1048',
+'2021U1049',
+'2021U1050',
+'2021U1052',
+'2021U1053',
+'2021U1054',
+'2021U1055',
+'2021U1056',
+'2021U1057',
+'2021U1058',
+'2021U1059',
+'2021U1060',
+'2021U1061',
+'2021U1062',
+'2021U1063',
+'2021U1064',
+'2021U1065',
+'2021U1067',
+'2021U1068',
+'2021U1069',
+'2021U1070',
+'2021U1071',
+'2023P1001',
+'2023P1002',
+'2023P1003',
+'2023P1004',
+'2023P1005',
+'2023P1006',
+'2023P1007',
+'2023P1008',
+'2023P1011',
+'2023P1012',
+'2023P2001',
+'2023P2002',
+'2023P2004',
+'2023P2005',
+'2023P2006',
+'2023P2007',
+'2023P2009',
+'2023P2010',
+'2023P2011',
+'2023P2012',
+'2023P2013',
+'2023P2014',
+'2023P2016',
+'2023P3001',
+'2023P3004',
+'2023P3005',
+'2023P3006',
+'2023P3007',
+'2023P3008',
+'2023P3009',
+'2023P3010',
+'2023P3012',
+'2023P3013',
+'2023P3014',
+'2023P3015',
+'2023P3016'
+]
+for (var i = 0; i < names.length; i++) {
+  
+if (name == names[i])
+id.value = ids[i];
+id.placeholder = ids[i];
+
+}
+var formDataString = id.value;
+document.getElementById("load").style.display="initial";
+        document.getElementById("loader").style.display="block"; 
+        document.getElementById("message").textContent = "Fetching Data...";
+fetch(
+              "https://script.google.com/macros/s/AKfycbzS99i1aZnx-0C-wlxc7E80QZ8maGwtTl5PCe-FBTYW_YGsXSKOxrnaxNBKRB5OV0QrvA/exec",
+              {
+                redirect: "follow",
+                method: "POST",
+                body: formDataString,
+                headers: {
+                  "Content-Type": "text/plain;charset=utf-8",
+                },
+              }
+            )
+    
+              .then(function (response) {
+    
+                // Check if the request was successful
+                if (response) {
+             
+                  return response; // Assuming your script returns JSON response
+                } else {
+                  throw new Error("Failed to submit the form.");
+                }
+              })
+              .then(async function (data) {
+                const result1 = await data.json();
+          
+var head = result1.data2[0];
+var datas = result1.data2[1];
+console.log(head)
+console.log(datas)
+for(i=0;i<head[0].length;i++){
+  console.log(head[0][i])
+  console.log(datas[0][i])
+  var namw = head[0][i];
+  var t = document.getElementById(namw);
+
+  console.log(t)
+
+    if (head[0][i] == "Trainings and certifications Files" || head[0][i] == "Internships Files"|| head[0][i] == "CV"){
+      console.log("ok")
+      document.getElementById(head[0][i]+" N").innerHTML = '<a target="_blank"'+" href='"+datas[0][i]+"''>"+"Click here to view the old "+head[0][i]+"</a>"
+    }
+    else  if (t == null){
+    continue;
+    }
+    else{
+      document.getElementById(namw).value = datas[0][i];
+    }
+ 
+
+}
+document.getElementById("bt").disabled = false;
+document.getElementById("load").style.display="none";
+           
+
+              })
+    
+              .catch(function (error) {
+                // Handle errors, you can display an error message here
+                console.error(error);
+                document.getElementById("message").textContent =
+                  "An error occurred while fetching. Try refreshing the site";
+                document.getElementById("message").style.display = "block";
+              });
+            }
+  
+    </script>
+
+  
+
+    <script>
+function checken(){
+  console.log("click");
+  var fils = document.getElementsByClassName("Check");
+  console.log(fils)
+  for (var i = 0; i<fils.length;i++){
+    console.log(fils[i])
+    if (fils[i].checked){
+    var nam = fils[i].value + " V";
+    console.log(nam)
+    document.getElementById(nam).style.display="flex"; 
+  }
+  else if (fils[i].checked == false){
+    var nam = fils[i].value + " V";
+    console.log(nam)
+    document.getElementById(nam).style.display="none"; 
+  }
+  }
+}
+
+function checkiupload(){
+  let detail = document.getElementById('Internship 1');
+  let up = document.getElementById('i3');
+  let lup = document.getElementById('Internships File');
+  if (detail.value !== ""){
+    up.required = true; 
+    lup.name = "Internships Files Link";
+    console.log(lup.name);
+   }
+   else{
+    up.required = false;
+    lup.name = "Internships Files Link";
+    console.log(lup.name);
+   }
+}
+function checktupload(){
+  let detail = document.getElementById('Trainings and certifications');
+  let up = document.getElementById('i2');
+  let lup = document.getElementById('Trainings and certifications File');
+  if (detail.value !== ""){
+    up.required = true; 
+    lup.name = "Trainings and certifications Files Link";
+    console.log(lup.name);
+   }
+   else{
+    up.required = false;
+    lup.name = "Trainings and certifications Files Link";
+    console.log(lup.name);
+   }
+}
+      
+      </script>
+      <script src="script.js"></script>
+    </body>
+    </html>

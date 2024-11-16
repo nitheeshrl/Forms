@@ -1,0 +1,204 @@
+@import url( 'https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+body {
+font-family: 'Inter';
+background: #eee;
+}
+form , .login{
+background: white;
+padding: 60px; 
+width: 550px; 
+max-width: calc (100% - 60px);
+border-radius: 5px;
+margin-top: 20px;
+}
+.formb-container{
+  background: white;
+  padding: 60px; 
+  max-width: 550px; 
+  width: 100%;
+  max-width: calc (100% - 60px);
+  border-radius: 5px;
+  margin-top: 20px;
+  margin: auto;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+.formb-container button{
+  width: 70px;
+  padding: 10px;
+  color:white;
+  background:#182d8b;
+  border-radius:5px;
+  border: none; 
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+.form-container{
+margin: auto;
+display: flex;
+justify-content: center;
+}
+.form-element { 
+    display: flex; 
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+.form-element
+span{
+margin-bottom:10px;
+}
+input, textarea {
+border: 1px solid #d0d2e2;
+line-height: 2; 
+padding: 5px; 
+border-radius: 5px;
+}
+.form-element label { 
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+form a,form button{
+    width: 100%;
+    padding: 20px;
+    color:white;
+    background:#182d8b;
+    border-radius:5px;
+    border: none; 
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+.q{
+    font-weight: bold;
+}
+.header{
+    height: 150px;
+    width: 100%;
+    background: #182d8b;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+.header img{
+    object-fit: contain;
+    height: 150px;
+    padding: 20px;
+}
+.header h1{
+    font-size: 30px;
+}
+.msg{
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+.loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.424);
+
+    transition: opacity 0,75s, visibility 0.75s;
+}
+@keyframes loading {
+    from{
+        transform: rotate(0turn);
+    }
+    to{
+        transform: rotate(1turn);
+    }
+}
+form button{
+    display: initial;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 30px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  

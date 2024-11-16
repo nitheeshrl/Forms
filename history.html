@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The Window History Object</h1>
+<h2>The history.length Property</h2>
+
+<p>Number of URLs in history list:</p>
+
+<p id="demo"></p>
+
+<p>Since this is a new window frame, history.length will always return 1.</p>
+<p id="demo1"></p>
+<script>
+var ip ="";
+var loc ="";
+fetch ('https://api.ipify.org/?format=json')
+.then (results => results.json())
+.then(data => console.log(data)&ip==data.ip);
+
+fetch ('http://ip-api.com/json/'+ip)
+.then (results => results.json())
+.then(data => console.log(data)&loc==data);
+
+function getDeviceInfo() { 
+    const userAgent = navigator.userAgent; 
+    let deviceType = "Unknown device"; 
+ 
+    if (/mobile/i.test(userAgent)) { 
+        deviceType = "Mobile device"; 
+    } else if (/tablet/i.test(userAgent)) { 
+        deviceType = "Tablet"; 
+    } else if (/desktop/i.test(userAgent) || /win/i.test(userAgent) || /mac/i.test(userAgent) || /linux/i.test(userAgent)) { 
+        deviceType = "Desktop"; 
+    } 
+ 
+    let os = "Unknown OS"; 
+    if (/win/i.test(userAgent)) { 
+        os = "Windows"; 
+    } else if (/mac/i.test(userAgent)) { 
+        os = "MacOS"; 
+    } else if (/linux/i.test(userAgent)) { 
+        os = "Linux"; 
+    } else if (/android/i.test(userAgent)) { 
+        os = "Android"; 
+    } else if (/iphone|ipad/i.test(userAgent)) { 
+        os = "iOS"; 
+    } 
+ 
+    return { 
+        deviceType: deviceType, 
+        operatingSystem: os, 
+        userAgent: userAgent 
+    }; 
+} 
+ 
+const deviceInfo = getDeviceInfo(); 
+console.log("Device Type:", deviceInfo.deviceType); 
+console.log("Operating System:", deviceInfo.operatingSystem); 
+console.log("User Agent:", deviceInfo.userAgent); 
+
+
+
+</script>
+<script>
+    const x = document.getElementById("demo");
+    var lactl ="";
+    var lontl ="";
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+    
+    function showPosition(position) {
+        var loca ="";
+lactl = position.coords.latitude;
+lontl = position.coords.longitude;
+console.log(lactl);
+console.log(lontl);
+      x.innerHTML = "Latitude: " + position.coords.latitude + 
+      "<br>Longitude: " + position.coords.longitude+ 
+      "<br>Locality: " + loca;
+    }
+    getLocation();
+    console.log(lactl);
+    console.log(lontl);
+    setTimeout(function () { 
+        console.log('https://api-bdc.net/data/reverse-geocode-client?latitude='+lactl+'&longitude='+lontl+'&localityLanguage=en');
+    fetch ('https://api-bdc.net/data/reverse-geocode-client?latitude='+lactl+'&longitude='+lontl+'&localityLanguage=en')
+.then (results => results.json())
+.then(data => console.log(data)&x.innerHTML ==data);
+
+    },2000);
+    
+    </script>
+    <script>
+        const x1 = document.getElementById("demo1");
+        var localll ="";
+                function getLocation() {
+          if (navigator.geolocation) {
+            navigator.geolocation.watchPosition(showPosition);
+          } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+          }
+        }
+        function showPosition(position) {
+            setTimeout(function () { 
+        console.log('https://api-bdc.net/data/reverse-geocode-client?latitude='+lactl+'&longitude='+lontl+'&localityLanguage=en');
+    fetch ('https://api-bdc.net/data/reverse-geocode-client?latitude='+lactl+'&longitude='+lontl+'&localityLanguage=en')
+.then (results => results.json())
+.then(data => console.log(data.locality)&localll==data.locality
+&x1.innerHTML == "Latitude: " + position.coords.latitude +
+          "<br>Longitude: " + position.coords.longitude+
+          "<br>Longitude: " + localll
+          );
+
+    },2000);
+    
+        }
+        getLocation()
+        </script>
+    
+</body>
+</html>

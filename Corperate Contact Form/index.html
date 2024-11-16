@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="widthdevice-width, initial-scale=1">
+    <link rel="icon" href="white_logo.png" type="image/x-icon">
+    <title>NIFTEM-T Corporate Contact Form</title>  
+    <link rel="stylesheet" href="style.css" />
+
+</head>    
+<body>
+<section class="header">
+<div>
+<img src="white_logo.png" alt="">
+</div>
+<div>
+<h1>NIFTEM-T Placement Cell</h1>
+</div>
+</section>
+<section >
+<div class="form-container">
+<script type="text/javascript">var submitted=false </script>
+<iframe name="hiddenConfirm" id="hiddenConfirm" style="display: none;" onload="if(submitted){
+    window.location='submifssion.html'; }"></iframe>
+    <form id="form" class="container m-4 pl-4" method="POST">
+<h1 style="text-align: center;"> NIFTEM-T Corporate Contact Form </h1>
+
+
+<div id="frqa" class="frqa">
+<div class="form-element">
+<span class="q">Name of the organisation</span>
+<input type="text" name="Name of the organisation" required placeholder="Enter your name"/>
+</div>
+<div class="form-element">
+<span class="q">Contact person/ Designation</span>
+<input type="text" name="Contact person/ Designation" required placeholder="Enter your Contact person/Designation"/>
+</div>
+<div class="form-element">
+<span class="q">Contact Number</span>
+<input type="number" minlength="10" name="Contact Number" required placeholder="Enter your contact number"/>
+</div>
+<div class="form-element">
+<span class="q">Contact Email address</span>
+<input type="email" name="Contact Email address"  required placeholder="Enter your contact email"/>
+</div>
+<div class="form-element">
+<span class="q">No of vacancy for B.Tech Food Technology</span>
+<input type="number" name="No of vacancy for B.Tech Food Technology" required />
+</div>
+<div class="form-element">
+<span class="q">No of vacancy for M.Tech Food Technology</span>
+<input type="number" name="No of vacancy for M.Tech Food Technology" required />
+</div>
+<div class="form-element">
+<span class="q">Designation of vacancy for M.Tech Food Technology</span>
+<input type="text" name="Designation of vacancy for M.Tech Food Technology" required />
+</div>
+<div class="form-element radio-buttons">
+<span class="q">Category of Recruiter/Company</span>
+<label for="Past recruiter">
+
+<input
+type="radio"
+name="Category of Recruiter/Company"
+class="Category of Recruiter/Company"
+required 
+id="Past recruiter"
+value="Past recruiter"
+onclick="othervalueo2()"
+/>
+<span>Past recruiter</span>
+</label>
+<label for="First time recruiter">
+
+<input
+type="radio"
+name="Category of Recruiter/Company"
+class="Category of Recruiter/Company"
+id="First time recruiter"
+value="First time recruiter"
+onclick="othervalueo2()"
+/>
+<span>First time recruiter</span>
+</label>
+<label for="Bulk recruiter">
+
+<input
+type="radio"
+name="Category of Recruiter/Company"
+class="Category of Recruiter/Company"
+id="Bulk recruiter"
+value="Bulk recruiter"
+onclick="othervalueo2()"
+/>
+<span>Bulk recruiter</span>
+</label>
+<label for="Other Category">
+
+<input
+type="radio"
+
+id="Other Category"
+onclick="othervalue2()"
+/>
+<span>Other Category</span>
+</label>
+<input type="text" value="" id="Any-other-value2" style="display: none;" name="Category of Recruiter/Company"  >
+</div>
+
+
+<div class="form-element radio-buttons">
+<span class="q">Mode of selection</span>
+<label for="Presentation/Pre-Placements talks">
+
+<input
+type="checkbox"
+name="Mode"
+class="Mode of selection"
+required
+id="Presentation/Pre-Placements talks"
+value="Presentation/Pre-Placements talks"
+onclick="othervalue()"
+/>
+<span>Presentation/Pre-Placements talks</span>
+</label>
+<label for="Group Discussion">
+
+<input
+type="checkbox"
+name="Mode"
+class="Mode of selection"
+id="Group Discussion"
+value="Group Discussion"
+onclick="othervalue()"
+/>
+<span>Group Discussion</ span>
+</label>
+<label for="Interview">
+
+<input
+type="checkbox"
+name="Mode"
+class="Mode of selection"
+id="Interview"
+value="Interview"
+onclick="othervalue()"
+/>
+<span>Interview</ span>
+</label>
+<label for="Technical Assessment">
+
+<input
+type="checkbox"
+name="Mode"
+class="Mode of selection"
+id="Technical Assessment"
+value="Technical Assessment"
+onclick="othervalue()"
+/>
+<span>Technical Assessment</ span>
+</label>
+<label for="Other">
+
+<input
+type="checkbox"
+id="Other"
+onclick="othervalue()"
+/>
+<span>Other</ span>
+</label>
+<input type="text" id="Any-other-value" style="display: none;" name="Mode"
+class="Mode of selection" >
+<input type="hidden" name="Mode of selection" id="selection Value" value="">
+</div>
+<div class="form-element">
+<span class="q">Date and time of visit</span>
+<input type="datetime-local" name="Date and time of visit" required placeholder="Enter the date and time of your visit"/>
+</div>
+<div class="form-element">
+<span class="q">No. of persons visiting</span>
+<input type="number" name="No. of persons visiting" required placeholder="Enter the no. of persons visiting"/>
+</div>
+<div class="form-element radio-buttons">
+<span class="q">Facilities for persons visiting</span>
+<label for="Accomodation">
+
+<input
+type="checkbox"
+name="Facilities"
+required 
+id="Facilities for persons visiting"
+value="Accomodation"
+/>
+<span>Accomodation</span>
+</label>
+<label for="Food">
+
+<input
+type="checkbox"
+name="Facilities"
+id="Facilities for persons visiting"
+value="Food"
+/>
+<span>Food</span>
+</label>
+<label for="Transport">
+
+<input
+type="checkbox"
+name="Facilities"
+id="Facilities for persons visiting"
+value="Transport"
+/>
+<span>Transport</span>
+</label>
+<input type="hidden" name="Facilities for persons visiting" id="Facilities Value" value="">
+</div>
+
+<button style="margin-top: 20px;" type="submit" id="bt"> 
+Submit
+</button> 
+<div
+      id="message"
+    
+      ></div>
+<div id="load" class="loader"> 
+<img style="scale: 1.5;" src="loader.gif" alt="">
+    </div> 
+  </div> 
+</div>
+<script>
+let form = document.querySelector("form");
+form.addEventListener('submit',()=>{ {
+  document.getElementById("load").style.display="flex";
+  document.getElementById("bt").style.display="none";
+  let skills = [];
+  let skill = document.getElementById("Facilities Value");
+document.querySelectorAll ('[id="Facilities for persons visiting"]'). forEach(item => {
+if (item.checked === true) {
+skills.push(item.value);}})
+skill.value = skills;
+console.log(skills)
+let skills1 = [];
+  let skill1 = document.getElementById("selection Value");
+document.querySelectorAll ('[class="Mode of selection"]'). forEach(item => {
+if (item.checked === true) {
+skills1.push(item.value);}})
+var oradio = document.getElementById("Other");
+var otext = document.getElementById("Any-other-value");
+if (oradio.checked === true){
+  skills1.push(otext.value);
+}
+skill1.value = skills1;
+console.log(skills1)
+
+}})
+function othervalue() {
+  var radio = document.getElementById("Other");
+  var radioreq = document.getElementById("Presentation/Pre-Placements talks");
+  var text = document.getElementById("Any-other-value");
+  let item = document.getElementsByClassName("Mode of selection");
+  for (i=0; i < item.length; i++){
+      if (item[i].checked){
+        radioreq.required = false;
+
+
+      }
+      else {
+        radioreq.required = true;
+
+      }
+    }
+  if (radio.checked){
+    text.style.display = "block";
+    radioreq.required = false;
+    text.required = true;
+  } else {
+     text.style.display = "none";
+
+}
+}
+function othervalue2() {
+  var radio = document.getElementById("Other Category");
+  var radioreq = document.getElementById("Past recruiter");
+  var text = document.getElementById("Any-other-value2");
+  let item = document.getElementsByClassName("Category of Recruiter/Company")
+  if (radio.checked ){
+    text.style.display = "block";
+    radioreq.required = false;
+    text.required = true;
+
+    for (i=0; i < item.length; i++){
+      item[i].checked = false;
+    }
+    console.log(text)
+  } 
+  else if (item.click){
+    radio.checked = false;
+  }
+  else {
+     text.style.display = "none";
+
+  }
+
+}
+function othervalueo2() {
+  var radio = document.getElementById("Other Category");
+  var radioreq = document.getElementById("Past recruiter");
+  var text = document.getElementById("Any-other-value2");
+  let item = document.getElementsByClassName("Category of Recruiter/Company")
+  for (i=0; i < item.length; i++){
+     if (item[i].checked ){
+radio.checked = false;
+text.style.display = "none";
+  } 
+  }
+
+}
+document.getElementById("form").addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent the default form submission
+        document.getElementById("message").textContent = "Submitting..";
+        document.getElementById("message").style.display = "block";
+        document.getElementById("bt").disabled = true;
+
+        // Collect the form data
+        var formData = new FormData(this);
+        var keyValuePairs = [];
+        for (var pair of formData.entries()) { 
+     
+          if (pair[0] !== "Facilities" && pair[0] !== "Mode"){
+            
+          
+          keyValuePairs.push(pair[0] + "=val=" + pair[1]);
+console.log(pair[0])
+        }}
+
+        var formDataString0 = keyValuePairs.join("=forqa=");
+        var formDataString1 = formDataString0.replace('=forqa=Category of Recruiter/Company==forqa=','=forqa=');
+
+        var formDataString = formDataString1.replace('=forqa=Mode of selection==forqa=','=forqa=');
+
+
+        // Send a POST request to your Google Apps Script
+        fetch(
+          "https://script.google.com/macros/s/AKfycbzBxKhObnAmXw4RoJIDxInHi-l8NedowISf0MG2I6_cUkgqKppmA6kauafdjX71hY3boQ/exec",
+          {
+            redirect: "follow",
+            method: "POST",
+            body: formDataString,
+            headers: {
+              "Content-Type": "text/plain;charset=utf-8",
+            },
+          }
+        )
+          .then(function (response) {
+            // Check if the request was successful
+            if (response) {
+              return response; // Assuming your script returns JSON response
+            } else {
+              throw new Error("Failed to submit the form.");
+            }
+          })
+          .then(function (data) {
+            // Display a success message
+            document.getElementById("bt").disabled = false;
+            document.getElementById("form").reset();
+            window.location='submission.html';
+
+
+            setTimeout(function () {
+              document.getElementById("message").textContent = "";
+              document.getElementById("message").style.display = "none";
+            }, 2600);
+          })
+          .catch(function (error) {
+            // Handle errors, you can display an error message here
+            console.error(error);
+            document.getElementById("message").textContent =
+              "An error occurred while submitting the form.";
+            document.getElementById("message").style.display = "block";
+          });
+      });
+</script>
+</section>
+</body>
+</html>

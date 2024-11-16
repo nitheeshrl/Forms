@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="widthdevice-width, initial-scale=1">
+    <link rel="icon" href="white_logo.png" type="image/x-icon">
+    <title>Successfully Updated</title>  
+    <link rel="stylesheet" href="style.css" />
+
+</head>    
+<body>
+    <script>
+        var name = sessionStorage.getItem("name");
+        var formDataString = sessionStorage.getItem("datastring");
+        console.log(name)
+        console.log(formDataString)
+    </script>
+<section class="header">
+<div>
+<img src="white_logo.png" alt="">
+</div>
+<div>
+<h1>NIFTEM-T Placement Cell</h1>
+</div>
+</section>
+<section class="msg" >
+
+    <h1 style="text-align: center;">Successfully Updated</h1>
+    <div   id="dfiled" style="align-content:normal; margin-left: 0px;margin-right: auto; margin-top: 30px;"><p style="text-align: left;">
+        <div ></div> <span id = "status"></span><br><br><span id = "status2"></span> </p></div>
+
+        <div id="load" class="load" > 
+            <div class="loader" id="loader"> 
+          
+              </div> 
+              <div
+                id="message"
+              class="message"
+              style="width: 350px;"
+                ></div>
+            </div> 
+
+
+</section>
+<script>
+  
+  var stat = sessionStorage.getItem("stat");
+
+    var status = document.getElementById("status");
+    console.log(status)
+    document.getElementById("status").textContent = "The details of "+name+" are successfully updated.";
+    console.log("start")
+    if (stat !=="sent"){
+    document.getElementById("load").style.display="initial";
+        document.getElementById("loader").style.display="block"; 
+        document.getElementById("message").textContent = "Sending Mail to "+name+"...";
+        
+        
+          console.log("in")
+         
+fetch(
+ 
+              "https://script.google.com/macros/s/AKfycbwSVLIKqnTCuLSw0vBwh3DHYTbovbQnhhK93vB8tNNBFxpnTZJ8SxB4wrxSu4ziFgWlTQ/exec",
+              {
+                redirect: "follow",
+                method: "POST",
+                body: formDataString,
+                headers: {
+                  "Content-Type": "text/plain;charset=utf-8",
+                },
+              }
+            )
+    
+              .then(function (response) {
+    
+                // Check if the request was successful
+                if (response) {
+             
+                  return response; // Assuming your script returns JSON response
+                } else {
+                  throw new Error("Failed to send the mail.");
+                }
+              })
+              .then(async function (data) {
+        const result1 = await data.json();
+  
+        var r = result1.data2;
+console.log(r);
+if(r == "sent"){
+    document.getElementById("loader").style.display="none"; 
+                document.getElementById("message").textContent =
+                 "Mail Sent to "+name;
+                document.getElementById("message").style.display = "block";
+                setTimeout(function () { document.getElementById("load").style.display="none"; },2000);
+                document.getElementById("status2").textContent = "Mail Sent to "+name;
+                sessionStorage.setItem("stat","sent");
+}
+
+
+      })
+
+      .catch(function (error) {
+        // Handle errors, you can display an error message here
+        console.error(error);
+        document.getElementById("loader").style.display="none"; 
+        document.getElementById("message").textContent =
+          "Failed to Send the Mail.";
+        document.getElementById("message").style.display = "block";
+      });
+    }
+             
+</script>
+</body>
+</html>

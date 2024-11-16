@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="widthdevice-width, initial-scale=1">
+    <link rel="icon" href="white_logo.png" type="image/x-icon">
+    <title>Server Maintenance</title>  
+    <link rel="stylesheet" href="style.css" />
+
+</head>    
+<body>
+    <script>
+        window.onload=getserverstatus();
+  function getserverstatus(){
+    var formDataString ="";
+    console.log("checking")
+    fetch(
+      "https://script.google.com/macros/s/AKfycbwZF3NBQBxrKmA2sFFLnE5yKafCxFUvB0hHeOlNzpVWdEDpfH0HpLbev7D_Dmt83ggF/exec",
+      {
+        redirect: "follow",
+        method: "POST",
+        body: formDataString,
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8",
+        },
+      }
+    )
+
+      .then(function (response) {
+
+        // Check if the request was successful
+        if (response) {
+     
+          return response; // Assuming your script returns JSON response
+        } else {
+          throw new Error("Failed to submit the form.");
+        }
+      })
+      .then(async function (data) {
+        const result1 = await data.json();
+  
+var cr = result1.data2;
+serverstatus = cr
+if (cr!=="Updating"){
+  window.location='user.html';
+}
+else{
+
+}
+      })
+
+      .catch(function (error) {
+        // Handle errors, you can display an error message here
+        console.error(error);
+        document.getElementById("message").textContent =
+          "An error occurred while updating.";
+        document.getElementById("message").style.display = "block";
+      });
+    }
+   
+setInterval(() => {
+getserverstatus();
+}, 1000);
+    </script>
+<section class="header1">
+<div>
+<img src="white_logo.png" alt="">
+</div>
+<div>
+<h1>NIFTEM-T Placement Cell</h1>
+</div>
+</section>
+<section class="msg" >
+
+    <h1 style="text-align: center;">Server Maintenance</h1>
+    <div   id="dfiled" style="align-content:normal; margin-left: 0px;margin-right: auto; margin-top: 30px;"><p style="text-align: left;">
+      </p><span>Sorry for the inconvenience. <br> Unable to receive request due to server maintenance. Try after 10 minutes</span><br><br>
+
+
+
+
+</section>
+
+</body>
+</html>

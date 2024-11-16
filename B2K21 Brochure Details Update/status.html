@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="widthdevice-width, initial-scale=1">
+    <link rel="icon" href="white_logo.png" type="image/x-icon">
+    <title>Check Status</title>  
+    <link rel="stylesheet" href="style.css" />
+
+</head>    
+<body>
+<section class="header1">
+<div>
+<img src="white_logo.png" alt="">
+</div>
+<div>
+<h1>NIFTEM-T Placement Cell</h1>
+</div>
+</section>
+<section >
+<div class="form-container">
+
+
+    <form id="form" class="container m-4 pl-4" method="POST">
+<h1 style="text-align: center;"> Check status of update request </h1>
+<div id="f1">
+<div class="form-element">
+<span class="q">Enter the Request ID</span>
+<input type="text" name="Request ID" id="Request ID" required placeholder="Enter the Request ID"/>
+</div>
+
+<button style="" type="submit" id="bt"> 
+Submit
+</button> 
+<div id="load" class="load" > 
+  <div class="loader" id="loader"> 
+
+    </div> 
+    <div
+      id="message"
+    class="message"
+      ></div>
+  </div> 
+</div>
+<div class="f2" id="f2" style="display: none;">
+
+  <div class="confirm_details">
+    <span><b>Alloted Member : </b></span>  
+    <span id="member"></span>
+    </div><br>
+    <div class="confirm_details">
+      <span><b>Status : </b></span>  
+      <span id="status"></span>
+      </div><br>
+    <div class="confirm_details" id="reasont" >
+      <span><b>Reason : </b></span>  
+      <span id="reason"></span>
+      </div><br>
+    <div class="confirm_details">
+      <span><b>Requested time : </b></span>  
+      <span id="reqtime"></span>
+      </div><br>
+      <div class="confirm_details" id="restimet">
+        <span><b>Responded time : </b></span>  
+        <span id="restime"></span>
+        </div><br>
+</div>
+</div>
+<script>
+let form = document.querySelector("form");
+form.addEventListener('submit',()=>{ {
+  document.getElementById("load").style.display="initial";
+  document.getElementById("loader").style.display="block"; 
+  document.getElementById("bt").style.display="none";
+}})
+document.getElementById("form").addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent the default form submission
+        document.getElementById("message").textContent = "Checking Status...";
+        document.getElementById("message").style.display = "block";
+        document.getElementById("bt").disabled = true;
+
+        var formDataString = document.getElementById("Request ID").value;
+
+        // Send a POST request to your Google Apps Script
+        fetch(
+          "https://script.google.com/macros/s/AKfycbwnVWZ4YiNC7fgHl5aigJl9AoL2wp5Lpe50iNv3-t9iK31Ympo4Vmb_YUDEEXJ9IIJp/exec",
+          {
+            redirect: "follow",
+            method: "POST",
+            body: formDataString,
+            headers: {
+              "Content-Type": "text/plain;charset=utf-8",
+            },
+          }
+        )
+          .then(function (response) {
+            // Check if the request was successful
+            if (response) {
+              return response; // Assuming your script returns JSON response
+            } else {
+              throw new Error("Failed to check the status.");
+            }
+          })
+          .then(async function (data) {
+const result1 = await data.json();
+
+var r = result1.data2;
+console.log(r);
+var values = r.split("/");
+if(values[0] =="Declined"){
+  document.getElementById("f1").style.display="none"; 
+  document.getElementById("f2").style.display="initial"; 
+  document.getElementById("load").style.display="none"; 
+  document.getElementById("status").textContent = values[0];
+  document.getElementById("reason").textContent = values[1];
+  document.getElementById("reqtime").textContent = values[2];
+  document.getElementById("restime").textContent = values[3];
+  document.getElementById("member").textContent = values[4];
+}
+else if(values[0] =="Approved & Updated"){
+  document.getElementById("f1").style.display="none"; 
+  document.getElementById("f2").style.display="initial"; 
+  document.getElementById("load").style.display="none"; 
+  document.getElementById("status").textContent = values[0];
+  document.getElementById("reasont").style.display="none"
+  document.getElementById("reqtime").textContent = values[2];
+  document.getElementById("restime").textContent = values[3];
+  document.getElementById("member").textContent = values[4];
+}
+else {
+  document.getElementById("f1").style.display="none"; 
+  document.getElementById("f2").style.display="initial"; 
+  document.getElementById("load").style.display="none"; 
+  document.getElementById("status").textContent = values[0];
+  document.getElementById("reasont").style.display="none"
+  document.getElementById("reqtime").textContent = values[2];
+  document.getElementById("restimet").style.display="none";
+  document.getElementById("member").textContent = values[4];
+}
+
+})
+          .catch(function (error) {
+            // Handle errors, you can display an error message here
+            console.error(error);
+            document.getElementById("message").textContent =
+              "An error occurred while submitting the form.";
+            document.getElementById("message").style.display = "block";
+          });
+      });
+</script>
+</section>
+</body>
+</html>

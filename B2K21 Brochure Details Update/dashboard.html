@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="widthdevice-width, initial-scale=1">
+    <link rel="icon" href="white_logo.png" type="image/x-icon">
+    <title>Brochure Details Update Dashboard</title>  
+    <link rel="stylesheet" href="style.css" />
+</head>    
+<body>
+<section class="header1">
+<div>
+<img src="white_logo.png" alt="">
+</div>
+<div>
+<h1>NIFTEM-T Placement Cell</h1>
+</div>
+</section>
+
+<section >
+<div class="form-container">
+<script type="text/javascript">var submitted=false </script>
+    <form action="" method="post" target="hiddenConfirm"
+    onsubmit="submitted=true">
+<h1 style="text-align: center;"> Brochure Details Update Dashboard </h1>
+<div style="display: flex; flex-direction: row; align-items: center;justify-content: center;" >
+<a href="user.html" class="buttonclick">
+ Request Form
+</a>
+</div>
+<div style="display: flex; flex-direction: row;align-items: center;justify-content: center;">
+<a href="status.html" class="buttonclick">
+   Check Status
+</a>
+</div>
+
+
+</form>
+<script>
+    var ip ="";
+var loc ="";
+fetch ('https://api.ipify.org/?format=json')
+.then (results => results.json())
+.then(data => console.log(data)&ip==data.ip&sessionStorage.setItem("ip",data.ip));
+
+fetch ('http://ip-api.com/json/'+ip)
+.then (results => results.json())
+.then(data => console.log(data)&loc==data);
+console.log(ip)
+function getDeviceInfo() { 
+    const userAgent = navigator.userAgent; 
+    let deviceType = "Unknown device"; 
+ 
+    if (/mobile/i.test(userAgent)) { 
+        deviceType = "Mobile device"; 
+    } else if (/tablet/i.test(userAgent)) { 
+        deviceType = "Tablet"; 
+    } else if (/desktop/i.test(userAgent) || /win/i.test(userAgent) || /mac/i.test(userAgent) || /linux/i.test(userAgent)) { 
+        deviceType = "Desktop"; 
+    } 
+ 
+    let os = "Unknown OS"; 
+    if (/win/i.test(userAgent)) { 
+        os = "Windows"; 
+    } else if (/mac/i.test(userAgent)) { 
+        os = "MacOS"; 
+    } else if (/linux/i.test(userAgent)) { 
+        os = "Linux"; 
+    } else if (/android/i.test(userAgent)) { 
+        os = "Android"; 
+    } else if (/iphone|ipad/i.test(userAgent)) { 
+        os = "iOS"; 
+    } 
+ 
+    return { 
+        deviceType: deviceType, 
+        operatingSystem: os, 
+        userAgent: userAgent 
+    }; 
+} 
+ 
+const deviceInfo = getDeviceInfo(); 
+console.log("Device Type:", deviceInfo.deviceType); 
+console.log("Operating System:", deviceInfo.operatingSystem); 
+console.log("User Agent:", deviceInfo.userAgent); 
+
+    function senddata(locality){
+        var ipadd = sessionStorage.getItem("ip");
+        console.log(ipadd)
+        var formDataString = ipadd+"/"+locality;
+        console.log(formDataString);
+     fetch(
+      "https://script.google.com/macros/s/AKfycbzJaRTTrw2439HafsjC0usDZzfZa9k4bRwWaEdBH6KnLHCm8_gT9mC9xty6A70gC1aHOQ/exec",
+      {
+        redirect: "follow",
+        method: "POST",
+        body: formDataString,
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8",
+        },
+      }
+    )
+
+      .then(function (response) {
+
+        // Check if the request was successful
+        if (response) {
+     
+          return response; // Assuming your script returns JSON response
+        } else {
+          throw new Error("Failed to submit the form.");
+        }
+      })
+      .then(async function (data) {
+        const result1 = await data.json();
+  
+var cr = result1.data2;
+console.log(cr)
+      })
+
+      .catch(function (error) {
+        // Handle errors, you can display an error message here
+        console.error(error);
+
+      });
+    }
+</script>
+<script>
+
+
+    const x = document.getElementById("demo");
+    var lactl ="";
+    var lontl ="";
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else { 
+   
+      }
+    }
+    
+    function showPosition(position) {
+        var loca ="";
+lactl = position.coords.latitude;
+lontl = position.coords.longitude;
+console.log(lactl);
+console.log(lontl);
+
+    }
+    getLocation();
+    console.log(lactl);
+    console.log(lontl);
+    setTimeout(function () { 
+        console.log('https://api-bdc.net/data/reverse-geocode-client?latitude='+lactl+'&longitude='+lontl+'&localityLanguage=en');
+    fetch ('https://api-bdc.net/data/reverse-geocode-client?latitude='+lactl+'&longitude='+lontl+'&localityLanguage=en')
+.then (results => results.json())
+.then(data => console.log(data)&senddata(data.locality));
+
+    },2000);
+    
+    </script>
+</div>
+
+</section>
+
+</body>
+</html>

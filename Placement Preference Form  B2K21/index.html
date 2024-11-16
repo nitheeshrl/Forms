@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="widthdevice-width, initial-scale=1">
+    <link rel="icon" href="white_logo.png" type="image/x-icon">
+    <title>Preference Form</title>  
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      window.onload=getstatus();
+       function getstatus(){
+   const url = "https://script.google.com/macros/s/AKfycbxR9JjLW-_xKlNmW7-2OmoqYeHLkfZn45DJL-kazZ4Nl_gGqbUNwJk96DmvpyGzxAPp/exec" 
+   var val = "Placement Preference Form B2K21";
+   console.log(val)
+   fetch(`${url}?header=${val}`)
+       .then((response) => response.json())
+       .then(({ data }) => {
+           if (data == "Live"){
+   
+               document.getElementById("frqa").style.display="initial";
+               document.getElementById("ll").textContent="";
+   
+               }
+               else if (data == "Inactive"){
+                 document.getElementById("frqa").style.display="none";
+                 window.location='end.html';
+               }
+       })
+       .catch((error) => console.error('!!!!!!!!', error));
+   }
+   </script>
+</head>    
+<body>
+<section class="header">
+<div>
+<img src="white_logo.png" alt="">
+</div>
+<div>
+<h1>NIFTEM-T Placement Cell</h1>
+</div>
+</section>
+<section >
+<div class="form-container">
+<script type="text/javascript">var submitted=false </script>
+<form id="form" class="container m-4 pl-4" name="form" action="stepto2()" >
+<h1 style="text-align: center;"> Placement Preference Form </h1>
+
+<div style="margin-top: 50px; margin-bottom: 10px;" id="countdown">
+    <h3 id="timer name" style="margin-bottom: -2px;">Time Left</h3>
+    <div  id="timer" style="display:flex; flex-direction:  row;">
+      <div id="daysn">
+        <span id="days">0</span>
+        <span>Days</span>
+      </div>
+      <div id="hoursn">
+        <span id="hours">0</span>
+        <span>Hours</span>
+      </div>
+      <div>
+        <span id="minutes" >0</span>
+        <span>Minutes</span>
+      </div>
+      <div>
+        <span id="seconds">0</span>
+        <span>Seconds</span>
+      </div>
+    </div>
+  </div>
+<h3 id="ll" style="text-align: center;">Form Loading....</h3>
+<div id="frqa" class="frqa">
+  <section class="step1" id="step1">
+
+  
+<div class="form-element">
+<span class="q">Name</span>
+<select name="Name" id="Name" onchange="matchnameid()" required placeholder="Select your name">
+<option value="">Select your name</option>
+<option value='Aarthi A'>Aarthi A</option>
+<option value='Aishwarya Lakshmi S'>Aishwarya Lakshmi S</option>
+<option value='Ajitesh S'>Ajitesh S</option>
+<option value='Akash B'>Akash B</option>
+<option value='Amirtha Varshini A'>Amirtha Varshini A</option>
+<option value='Anandha Keerthy M'>Anandha Keerthy M</option>
+<option value='Anindit Bizy Nair'>Anindit Bizy Nair</option>
+<option value='Anusha R'>Anusha R</option>
+<option value='Archana P'>Archana P</option>
+<option value='Avantika C'>Avantika C</option>
+<option value='Chandrika Devendrappa'>Chandrika Devendrappa</option>
+<option value='Chitturi Rohith'>Chitturi Rohith</option>
+<option value='Cubarani Η'>Cubarani Η</option>
+<option value='David Evander Jebson S'>David Evander Jebson S</option>
+<option value='Dhanaselvam KR'>Dhanaselvam KR</option>
+<option value='Diana Celcia R'>Diana Celcia R</option>
+<option value='Diya Dharshini S'>Diya Dharshini S</option>
+<option value='Ethaya D'>Ethaya D</option>
+<option value='Gautam Nayak'>Gautam Nayak</option>
+<option value='Ginu Robtus R'>Ginu Robtus R</option>
+<option value='Guberavishnu S'>Guberavishnu S</option>
+<option value='Guguloth Sridhar'>Guguloth Sridhar</option>
+<option value='Himavanth R'>Himavanth R</option>
+<option value='Jegan P'>Jegan P</option>
+<option value='Jenish Daniel B'>Jenish Daniel B</option>
+<option value='Joshua Charles'>Joshua Charles</option>
+<option value='K Kabilan'>K Kabilan</option>
+<option value='Karyamsetty Worship'>Karyamsetty Worship</option>
+<option value='Keerthika P'>Keerthika P</option>
+<option value='Kevin Francis'>Kevin Francis</option>
+<option value='Kisha M'>Kisha M</option>
+<option value='Kota Lakshmi Sanjana'>Kota Lakshmi Sanjana</option>
+<option value='Lakshmi Narayanan S'>Lakshmi Narayanan S</option>
+<option value='Lakshmi Sruthi L'>Lakshmi Sruthi L</option>
+<option value='Lavudya Sai Kumar'>Lavudya Sai Kumar</option>
+<option value='Mahabir Prasad Swain'>Mahabir Prasad Swain</option>
+<option value='Merla A P'>Merla A P</option>
+<option value='Mohamed Tharif N J'>Mohamed Tharif N J</option>
+<option value='Mohannath Shroff J'>Mohannath Shroff J</option>
+<option value='MA Monesh Ram'>MA Monesh Ram</option>
+<option value='Mudavath Anjali'>Mudavath Anjali</option>
+<option value='Muthuraja K'>Muthuraja K</option>
+<option value='Nitheesh R L'>Nitheesh R L</option>
+<option value='Nithish J P'>Nithish J P</option>
+<option value='Padmaja M'>Padmaja M</option>
+<option value='Pranav Nanda Kishore'>Pranav Nanda Kishore</option>
+<option value='Punithavathi D'>Punithavathi D</option>
+<option value='Rakshithapriya S'>Rakshithapriya S</option>
+<option value='J Sanjeeth'>J Sanjeeth</option>
+<option value='Santhoshkumar P'>Santhoshkumar P</option>
+<option value='Shivam Jha'>Shivam Jha</option>
+<option value='Sivashree '>Sivashree </option>
+<option value='Sri Harini S'>Sri Harini S</option>
+<option value='Srinithi C P'>Srinithi C P</option>
+<option value='Srivatsan V'>Srivatsan V</option>
+<option value='Subbu Krishna Sharma GM '>Subbu Krishna Sharma GM </option>
+<option value='Suman Kumar'>Suman Kumar</option>
+<option value='Surendar S'>Surendar S</option>
+<option value='Tippaleti Srujana'>Tippaleti Srujana</option>
+<option value='Vemula Uharika'>Vemula Uharika</option>
+<option value='Vishnu Varthan T'>Vishnu Varthan T</option>
+<option value='Yadla Ganesh Babu'>Yadla Ganesh Babu</option>
+<option value='Yuvashreekantham R'>Yuvashreekantham R</option>
+</select>
+
+</div>
+<div class="form-element">
+<span class="q">ID Number</span>
+<input readonly type="text" name="ID Number" id="ID Number" required placeholder="Enter your ID number" />
+</div>
+<div class="form-element">
+<span class="q">Email address</span>
+<input type="email" name="Email address" id="Email address" required placeholder="Enter your email"/>
+</div>
+<div class="form-element radio-buttons">
+<span class="q">What is yourn future preference</span>
+<label for="Placement through Institute">
+
+<input
+type="radio"
+name="What is your future preference"
+required 
+id="Placement through Institute"
+value="Placement through Institute"
+/>
+<span>Placement through Institute</span>
+</label>
+<label for="Higher Studies through Institute">
+
+<input
+type="radio"
+name="What is your future preference"
+id="Higher Studies through Institute"
+value="Higher Studies through Institute"
+/>
+<span>Higher Studies through Institute</ span>
+</label>
+<label for="Entrepreneurship">
+
+<input
+type="radio"
+name="What is your future preference"
+id="Entrepreneurship"
+value="Entrepreneurship"
+/>
+<span>Entrepreneurship</ span>
+</label>
+<label for="By yourself">
+
+<input
+type="radio"
+name="What is your future preference"
+id="By yourself"
+value="By yourself"
+/>
+<span>By yourself</ span>
+</label>
+</div>
+<div class="form-element">
+<span class="q">Upload your photo</span>
+<input required id="i2" type="file" accept="image/*" name="file" width="10" height="100"/>
+<input id="fileurl2" type="hidden" name="Photo D.link" value=""/>
+<span style="color: red; font-size: 12px;" class="q">Required photo size : 531 x 650 pixels</span>
+<span class="fn1"></span>
+</div>
+
+<div style="font-size: 14px;">
+<span>*This response will be considered final. Please make your choice wisely.</span><br>
+<span >
+  All individuals must follow the guidelines,<a style="background: none; color: blue;font-size: 14px;padding: 0px;" target="_blank" href="https://drive.google.com/file/d/1ZKBOEvVUB-Q2h5ukq5VfMpvZ9WjT2GC9/view?usp=share_link">rules, and regulations</a> issued by the Placement Cell. The same must be signed to proceed with internships or placements through the NIFTEM-T Placement Cell.</span>
+</div> 
+<button style="margin-top: 20px;"  type="button" id="bt1" onclick="stepto2()"> 
+Proceed
+</button> 
+
+
+  </section>
+  <section class="step2" id="step2">
+    <h1 style="text-align: center;">Confirmation Details</h1><br>
+    <div class="confirm_details">
+    <span><b>Name : </b></span>  
+    <span id="confirm_name"></span>
+    </div><br>
+    <div class="confirm_details">
+    <span><b>ID Number : </b></span>  
+    <span id="confirm_id"></span>
+    </div><br>
+    <div class="confirm_details">
+    <span><b>Email Address : </b></span>  
+    <span id="confirm_email"></span>
+    </div><br>
+    <div class="confirm_details">
+    <span><b>Preference : </b></span>  
+    <span id="confirm_choice"></span>
+    </div><br>
+    <div class="confirm_details">
+    <span><b>Photo : </b></span>  
+
+    <img id="confirmphoto" src="" alt="">
+    </div><br>
+  
+   
+    <label for="declaration">
+      <input type="checkbox" required name="Declaration" value="Accepted">
+      <span>I confirm that the details provided above are accurate and given with a clear mind. I guarantee that I will not make any further modifications.</span>
+      
+      </label>
+      <label for="declaration"><br><br>
+      <input type="checkbox" required name="Declaration for rules" value="Accepted">
+      <span>I agree to the rules and regulations established by the NIFTEM-T Placement Cell. I understand that if I engage in any misconduct or disciplinary activities, the NIFTEM-T Placement Cell has the authority to take appropriate actions against me.</span>
+      
+      </label>
+      <div style="display: flex; flex-direction: row;">
+      </form>
+    <button style="margin-top: 20px ;" type="button" id="bt2" onclick="stepto1()"> 
+Back
+</button> 
+<button style="margin-top: 20px; margin-left: 20px;" type="submit" id="bt3"> 
+Submit
+</button> 
+</div>
+
+  </section>
+  <section class="step3" id="step3">
+    <h1 style="text-align: center;">Successfully Submitted</h1>
+    <div style="margin-top: 50px;margin-bottom: 50px;">
+  <span><b>Reference Number : </b></span>  
+  <span id="ref"></span>
+  </div>
+    <span>The form and the rules and regulations can be downloaded from the links provided below. Please submit the signed hard copy, endorsed by both you and the placement coordinator, to the NIFTEM-T Placement Cell. </span><br><br>
+    <div   id="dfiled" style="align-content:normal; margin-left: auto;margin-right: auto; margin-top: 30px;"><p style="text-align: left;">
+      </p><span>Declaration Form</span><br><br>
+   <a style="text-decoration: none; padding: 10px;margin-top: 50px;" id="Downloadfiledec" href="">Download Here</a></div> </p>
+   <div   id="dfilep" style="align-content: normal; margin-left: auto;margin-right: auto; margin-top: 30px;display: none;"><p style="text-align: left;">
+    <span>Placement Rules and Regulation</span><br><br>
+ <a style="text-decoration: none; padding: 10px;margin-top: 50px;" id="Downloadfilep" href="">Download Here</a></div> </p>
+ <div  id="dfilei" style="align-content: normal; margin-left: auto;margin-right: auto; margin-top: 30px;"><p style=" text-align: left;">
+  <span>Internship Rules and Regulation</span><br><br>
+<a style="text-decoration: none; padding: 10px; margin-top: 50px;"id="Downloadfilei" href="">Download Here</a></div> </p>
+  </div><br>
+    </section>
+  
+  </div> 
+  <div id="load" class="load" > 
+  <div class="loader" id="loader"> 
+
+    </div> 
+    <div
+      id="message"
+    class="message"
+      ></div>
+  </div> 
+</div>
+<script>
+
+let form = document.querySelector("form");
+form.addEventListener('submit',()=>{ {
+  document.getElementById("load").style.display="initial";
+  document.getElementById("loader").style.display="block"; 
+  document.getElementById("bt3").style.display="none";
+}})
+document.getElementById("form").addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent the default form submission
+        document.getElementById("message").textContent = "Submitting..";
+        document.getElementById("message").style.display = "block";
+        document.getElementById("bt3").disabled = true;
+
+        // Collect the form data
+        var formData = new FormData(this);
+        var keyValuePairs = [];
+        for (var pair of formData.entries()) {
+          if (pair[0] !== "file"){
+    
+          keyValuePairs.push(pair[0] + "=val=" + pair[1]);
+        }}
+
+        var formDataString = keyValuePairs.join("=namff=");
+        
+        console.log(formDataString);
+
+        // Send a POST request to your Google Apps Script
+        fetch(
+          "https://script.google.com/macros/s/AKfycbwI2j5omRGQqBZn7bKaiYmjL9yGr4tH-G6YbXxzu0Oa7KsnKGkqaX_WKX3Gqs-9kcPB/exec",
+          {
+            redirect: "follow",
+            method: "POST",
+            body: formDataString,
+            headers: {
+              "Content-Type": "text/plain;charset=utf-8",
+            },
+          }
+        )
+          .then(function (response) {
+            // Check if the request was successful
+            if (response) {
+              return response; // Assuming your script returns JSON response
+            } else {
+              throw new Error("Failed to submit the form.");
+            }
+          })
+          .then(async function (data) {
+            const result1 = await data.json();
+            console.log(result1.data2);
+            if (result1.data2[0] !== "reject"){
+            // Display a success message
+            console.log(result1.data2[0])
+            console.log(result1.data2[1])
+            document.getElementById("bt1").disabled = false;
+            document.getElementById("form").reset();
+            var links = result1.data2[0].split("=nam=");
+            console.log(links);
+            if (result1.data2[2] == "Placement"){
+              document.getElementById("Downloadfiledec").href=links[0];
+              document.getElementById("Downloadfilei").href=links[1];
+              document.getElementById("Downloadfilep").href=links[2];
+              document.getElementById("dfilep").style.display="initial";
+            }
+            else{
+              document.getElementById("Downloadfiledec").href=links[0];
+              document.getElementById("Downloadfilei").href=links[1];
+            }
+            
+            document.getElementById("ref").textContent = result1.data2[1];
+            document.getElementById("step1").style.display="none";
+            document.getElementById("step2").style.display="none";
+            document.getElementById("step3").style.display="initial";
+            document.getElementById("load").style.display="none";
+            setTimeout(function () {
+              document.getElementById("message").textContent = "";
+              document.getElementById("message").style.display = "none";
+            }, 2600);}
+            else if (result1.data2[0] == "reject"){
+              window.location='reject.html';
+            }
+          })
+          .catch(function (error) {
+            // Handle errors, you can display an error message here
+            console.error(error);
+            document.getElementById("message").textContent =
+              "An error occurred while submitting the form.";
+            document.getElementById("message").style.display = "block";
+          });
+      });
+</script>
+<script>
+  step1 = document.getElementById("step1");
+  step2 = document.getElementById("step2");
+  step3 = document.getElementById("step3");
+bt1 = document.getElementById("bt1");
+bt2 = document.getElementById("bt2");
+bt3 = document.getElementById("bt3");
+
+confirmname = document.getElementById("confirm_name");
+confirmid = document.getElementById("confirm_id");
+confirmemail = document.getElementById("confirm_email");
+confirmchoice = document.getElementById("confirm_choice");
+
+
+function stepto2() {
+  let conchoice = "";
+  let name = document.getElementById('Name').value
+  let id = document.getElementById('ID Number').value
+  let email = document.getElementById('Email address').value
+  let choice = document.getElementsByName('What is your future preference')
+  let photo = document.getElementById('i2').value
+
+  for (i=0;i<choice.length;i++){
+  if (choice[i].checked){
+    confirmchoice.textContent=choice[i].value;
+    conchoice=choice[i].value;
+
+  }
+}
+  if(name == ""){
+    alert("Select the name");
+  }
+  else if(id == ""){
+    alert("Enter the ID Number");
+  }
+  else if(email == ""){
+    alert("Enter the email address");
+  }
+  else if(conchoice == ""){
+    alert("Select the preference");
+  }
+  else if(photo == ""){
+    alert("Upload the photo");
+  }
+
+  else{
+  
+step1.style.display="none";
+step2.style.display="initial"
+bt1.style.display="none";
+bt2.style.display="initial";
+bt3.style.display="initial";
+console.log(name);
+console.log(id);
+console.log(confirmchoice.value);
+console.log(photo);
+
+confirmname.textContent=document.form.Name.value;
+confirmid.textContent=id;
+confirmemail.textContent=email;
+for (i=0;i<choice.length;i++){
+  if (choice[i].checked){
+    confirmchoice.textContent=choice[i].value;
+  }
+}
+}
+
+
+
+      
+      function previewSelectedImage(i,o) {
+        const imageInput = document.getElementById(i);
+        const previewImage = document.getElementById(o);
+         const file = imageInput.files[0];
+         if (file) {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = function(e) {
+               previewImage.src = e.target.result;
+            }
+         }
+      }
+      document.getElementById('i2').addEventListener('change', previewSelectedImage('i2','confirmphoto'));
+
+}
+function stepto1() {
+step1.style.display="initial";
+step2.style.display="none";
+bt1.style.display="initial";
+bt2.style.display="none";
+bt3.style.display="none";
+}
+
+
+
+function matchnameid(){
+  let id = document.getElementById('ID Number');
+  let name = document.getElementById('Name').value;
+  var names =['Aarthi A',
+'Aishwarya Lakshmi S',
+'Ajitesh S',
+'Akash B',
+'Amirtha Varshini A',
+'Anandha Keerthy M',
+'Anindit Bizy Nair',
+'Anusha R',
+'Archana P',
+'Avantika C',
+'Chandrika Devendrappa',
+'Chitturi Rohith',
+'Cubarani Η',
+'David Evander Jebson S',
+'Dhanaselvam KR',
+'Diana Celcia R',
+'Diya Dharshini S',
+'Ethaya D',
+'Gautam Nayak',
+'Ginu Robtus R',
+'Guberavishnu S',
+'Guguloth Sridhar',
+'Himavanth R',
+'Jegan P',
+'Jenish Daniel B',
+'Joshua Charles',
+'K Kabilan',
+'Karyamsetty Worship',
+'Keerthika P',
+'Kevin Francis',
+'Kisha M',
+'Kota Lakshmi Sanjana',
+'Lakshmi Narayanan S',
+'Lakshmi Sruthi L',
+'Lavudya Sai Kumar',
+'Mahabir Prasad Swain',
+'Merla A P',
+'Mohamed Tharif N J',
+'Mohannath Shroff J',
+'MA Monesh Ram',
+'Mudavath Anjali',
+'Muthuraja K',
+'Nitheesh R L',
+'Nithish J P',
+'Padmaja M',
+'Pranav Nanda Kishore',
+'Punithavathi D',
+'Rakshithapriya S',
+'J Sanjeeth',
+'Santhoshkumar P',
+'Shivam Jha',
+'Sivashree ',
+'Sri Harini S',
+'Srinithi C P',
+'Srivatsan V',
+'Subbu Krishna Sharma GM ',
+'Suman Kumar',
+'Surendar S',
+'Tippaleti Srujana',
+'Vemula Uharika',
+'Vishnu Varthan T',
+'Yadla Ganesh Babu',
+'Yuvashreekantham R']
+var ids = ['2021U1001',
+'2021U1002',
+'2021U1003',
+'2021U1004',
+'2021U1005',
+'2021U1007',
+'2021U1008',
+'2021U1009',
+'2021U1010',
+'2021U1011',
+'2021U1012',
+'2021U1014',
+'2021U1015',
+'2021U1016',
+'2021U1017',
+'2021U1018',
+'2021U1019',
+'2021U1020',
+'2021U1021',
+'2021U1022',
+'2021U1024',
+'2021U1025',
+'2021U1027',
+'2021U1028',
+'2021U1029',
+'2021U1030',
+'2021U1031',
+'2021U1032',
+'2021U1033',
+'2021U1034',
+'2021U1035',
+'2021U1036',
+'2021U1037',
+'2021U1038',
+'2021U1039',
+'2021U1040',
+'2021U1041',
+'2021U1042',
+'2021U1043',
+'2021U1044',
+'2021U1046',
+'2021U1048',
+'2021U1049',
+'2021U1050',
+'2021U1052',
+'2021U1053',
+'2021U1054',
+'2021U1055',
+'2021U1056',
+'2021U1057',
+'2021U1058',
+'2021U1059',
+'2021U1060',
+'2021U1061',
+'2021U1062',
+'2021U1063',
+'2021U1064',
+'2021U1065',
+'2021U1067',
+'2021U1068',
+'2021U1069',
+'2021U1070',
+'2021U1071']
+for (var i = 0; i < names.length; i++) {
+  
+if (name == names[i])
+id.value = ids[i];
+id.placeholder = ids[i];
+
+}
+}
+  </script>
+  <script src="script.js"></script>
+</section>
+</body>
+</html>

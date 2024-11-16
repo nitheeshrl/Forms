@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="widthdevice-width, initial-scale=1">
+    <link rel="icon" href="white_logo.png" type="image/x-icon">
+    <title>Placement Brochure Form</title>  
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      window.onload=getstatus();
+       function getstatus(){
+   const url = "https://script.google.com/macros/s/AKfycbxR9JjLW-_xKlNmW7-2OmoqYeHLkfZn45DJL-kazZ4Nl_gGqbUNwJk96DmvpyGzxAPp/exec" 
+   var val = "Placement Brochure Form 2";
+   console.log(val)
+   fetch(`${url}?header=${val}`)
+       .then((response) => response.json())
+       .then(({ data }) => {
+           if (data == "Live"){
+   
+               document.getElementById("frqa").style.display="initial";
+               document.getElementById("ll").textContent="";
+   
+               }
+               else if (data == "Inactive"){
+                 document.getElementById("frqa").style.display="none";
+                 window.location='end.html';
+               }
+       })
+       .catch((error) => console.error('!!!!!!!!', error));
+   }
+   </script>
+</head>    
+<body>
+<section class="header">
+<div>
+<img src="white_logo.png" alt="">
+</div>
+<div>
+<h1>NIFTEM-T Placement Cell</h1>
+</div>
+</section>
+<section >
+<div class="form-container">
+<script type="text/javascript">var submitted=false </script>
+<iframe name="hiddenConfirm" id="hiddenConfirm" style="display: none;" onload="if(submitted){
+    window.location='submission.html'; }"></iframe>
+    <form id="form" class="container m-4 pl-4" method="POST">
+<h1 style="text-align: center;"> Placement Brochure Form </h1>
+<h3 id="ll" style="text-align: center;">Form Loading....</h3>
+<div id="frqa" class="frqa">
+<div class="form-element">
+  <span class="q">Name</span>
+<select  name="Name" id="Name" onchange="matchnameid()" required placeholder="Select your name">
+<option value="">Select your name</option>
+
+
+<option value='Padmaja M'>Padmaja M</option>
+
+<option value='Vishnu Varthan T'>Vishnu Varthan T</option>
+
+</select>
+
+</div>
+<div class="form-element">
+<span class="q">ID Number</span>
+<input readonly type="text" name="ID Number" id="ID Number" required placeholder="Enter your ID number" />
+</div>
+<div class="form-element">
+<span class="q">Email address</span>
+<input  type="email" name="Email address" id="Email address" required placeholder="Enter your email"/>
+</div>
+<div class="form-element">
+<span class="q">Skills</span>
+<textarea required name="Skills" id="Skills"></textarea>
+</div>
+<div class="form-element">
+<span class="q">Trainings and certifications</span>
+<textarea name="Trainings and certifications" id="Trainings and certifications" onchange="checktupload()"></textarea>
+</div>
+<div class="form-element">
+<span class="q">Upload your Trainings and certifications Files</span>
+<input id="i2" type="file" accept=".pdf" name="file" width="10" height="100"/>
+<input id="fileurl2" type="hidden" name="Trainings and certifications Files Link" value=""/>
+<span style="color: red;font-size: 12px;">Compile all files in one pdf</span>
+</div>
+<div class="form-element">
+<span class="q">Internships</span>
+<textarea  name="Internships" id="Internships" onchange="checkiupload()"></textarea>
+</div>
+<div class="form-element">
+<span class="q">Upload your Internships Files</span>
+<input id="i3" type="file" accept=".pdf" name="file" width="10" height="100"/>
+<input id="fileurl3" type="hidden" name="Internships Files Link" value=""/>
+<span style="color: red;font-size: 12px;">Compile all files in one pdf</span>
+</div>
+<div class="form-element">
+<span class="q">Known Languages</span>
+<textarea required name="Known Languages" id="Known Languages"></textarea>
+</div>
+<div class="form-element">
+<span class="q">Project title</span>
+<input type="text" name="Project title" id="Project title" required placeholder="Enter your Project title" />
+</div>
+<div class="form-element">
+<span class="q">Linkedin Profile Link</span>
+<input  type="url" name="Linkedin Profile Link" id="Linkedin Profile Link" required placeholder="Enter your Linkedin Profile Link" />
+</div>
+<div class="form-element">
+<span class="q">Upload your Linkedin QR</span>
+<input required id="i4" type="file" accept="image/*" name="file" width="10" height="100"/>
+<input id="fileurl4" type="hidden" name="Linkedin QR D.link" value=""/>
+</div>
+<div class="form-element">
+<span class="q">Upload your CV (<a target="_blank" href="https://docs.google.com/document/d/1s9h4ArYORwty0_Dn0qWyF9GjaBiXtYpa/edit?usp=share_link&ouid=106765427265752185402&rtpof=true&sd=true">Template</a>)</span>
+<input required id="i5" type="file" accept=".doc,.docx" name="file" width="10" height="100"/>
+<input id="fileurl5" type="hidden" name="CV D.link" value=""/>
+</div>
+
+<button style="margin-top: 20px;" type="submit" id="bt"> 
+Submit
+</button> 
+<div id="load" class="load" > 
+  <div class="loader" id="loader"> 
+
+    </div> 
+    <div
+      id="message"
+    class="message"
+      ></div>
+  </div> 
+</div>
+<script>
+document.getElementById("form").addEventListener("submit", function (e) {
+  e.preventDefault(); // Prevent the default form submission
+  let linurl = document.getElementById('Linkedin Profile Link').value;
+  let bt = document.getElementById('bt');
+  if (linurl.includes("linkedin")){
+
+      
+        document.getElementById("load").style.display="initial";
+  document.getElementById("loader").style.display="block"; 
+  document.getElementById("bt").style.display="none";
+        document.getElementById("message").textContent = "Submitting..";
+        document.getElementById("message").style.display = "block";
+        document.getElementById("bt").disabled = true;
+
+        // Collect the form data
+        var formData = new FormData(this);
+        var keyValuePairs = [];
+        for (var pair of formData.entries()) {
+          keyValuePairs.push(pair[0] + "=val=" + pair[1]);
+        }
+
+        var formDataString = keyValuePairs.join("=namff=");
+        console.log(formDataString)
+
+        // Send a POST request to your Google Apps Script
+        fetch(
+          "https://script.google.com/macros/s/AKfycbzmLpPTzhNjoNYOq19c4TknvU9ByCUH1roz2ftisC3HFjNvZCA93bWV0lD0T0-6ymfa/exec",
+          {
+            redirect: "follow",
+            method: "POST",
+            body: formDataString,
+            headers: {
+              "Content-Type": "text/plain;charset=utf-8",
+            },
+          }
+        )
+          .then(function (response) {
+            // Check if the request was successful
+            if (response) {
+              return response; // Assuming your script returns JSON response
+            } else {
+              throw new Error("Failed to submit the form.");
+            }
+          })
+          .then(async function (data) {
+            const result1 = await data.json();
+            console.log(result1.data2);
+            if (result1.data2 == "accept"){
+            // Display a success message
+            document.getElementById("bt").disabled = false;
+            document.getElementById("form").reset();
+            window.location='submission.html';
+            setTimeout(function () {
+              document.getElementById("message").textContent = "";
+              document.getElementById("message").style.display = "none";
+            }, 2600);}
+            else if (result1.data2 == "reject"){
+              window.location='reject.html';
+            }
+          })
+          .catch(function (error) {
+            // Handle errors, you can display an error message here
+            console.error(error);
+            document.getElementById("message").textContent =
+              "An error occurred while submitting the form.";
+            document.getElementById("message").style.display = "block";
+          });
+        }
+  else{
+
+    alert("Enter correct Linkedin URL")
+  }
+      });
+
+      function matchnameid(){
+  let id = document.getElementById('ID Number');
+  let email = document.getElementById('Email address');
+  let name = document.getElementById('Name').value;
+  var names =['Aarthi A',
+'Aishwarya Lakshmi S',
+'Ajitesh S',
+'Akash B',
+'Amirtha Varshini A',
+'Anandha Keerthy M',
+'Anindit Bizy Nair',
+'Anusha R',
+'Archana P',
+'Avantika C',
+'Chandrika Devendrappa',
+'Chitturi Rohith',
+'Cubarani Η',
+'David Evander Jebson S',
+'Dhanaselvam KR',
+'Diana Celcia R',
+'Diya Dharshini S',
+'Ethaya D',
+'Gautam Nayak',
+'Ginu Robtus R',
+'Guberavishnu S',
+'Guguloth Sridhar',
+'Himavanth R',
+'Jegan P',
+'Jenish Daniel B',
+'Joshua Charles',
+'K Kabilan',
+'Karyamsetty Worship',
+'Keerthika P',
+'Kevin Francis',
+'Kisha M',
+'Kota Lakshmi Sanjana',
+'Lakshmi Narayanan S',
+'Lakshmi Sruthi L',
+'Lavudya Sai Kumar',
+'Mahabir Prasad Swain',
+'Merla A P',
+'Mohamed Tharif N J',
+'Mohannath Shroff J',
+'MA Monesh Ram',
+'Mudavath Anjali',
+'Muthuraja K',
+'Nitheesh R L',
+'Nithish J P',
+'Padmaja M',
+'Pranav Nanda Kishore',
+'Punithavathi D',
+'Rakshithapriya S',
+'J Sanjeeth',
+'Santhoshkumar P',
+'Shivam Jha',
+'Sivashree ',
+'Sri Harini S',
+'Srinithi C P',
+'Srivatsan V',
+'Subbu Krishna Sharma GM ',
+'Suman Kumar',
+'Surendar S',
+'Tippaleti Srujana',
+'Vemula Uharika',
+'Vishnu Varthan T',
+'Yadla Ganesh Babu',
+'Yuvashreekantham R']
+var ids = ['2021U1001',
+'2021U1002',
+'2021U1003',
+'2021U1004',
+'2021U1005',
+'2021U1007',
+'2021U1008',
+'2021U1009',
+'2021U1010',
+'2021U1011',
+'2021U1012',
+'2021U1014',
+'2021U1015',
+'2021U1016',
+'2021U1017',
+'2021U1018',
+'2021U1019',
+'2021U1020',
+'2021U1021',
+'2021U1022',
+'2021U1024',
+'2021U1025',
+'2021U1027',
+'2021U1028',
+'2021U1029',
+'2021U1030',
+'2021U1031',
+'2021U1032',
+'2021U1033',
+'2021U1034',
+'2021U1035',
+'2021U1036',
+'2021U1037',
+'2021U1038',
+'2021U1039',
+'2021U1040',
+'2021U1041',
+'2021U1042',
+'2021U1043',
+'2021U1044',
+'2021U1046',
+'2021U1048',
+'2021U1049',
+'2021U1050',
+'2021U1052',
+'2021U1053',
+'2021U1054',
+'2021U1055',
+'2021U1056',
+'2021U1057',
+'2021U1058',
+'2021U1059',
+'2021U1060',
+'2021U1061',
+'2021U1062',
+'2021U1063',
+'2021U1064',
+'2021U1065',
+'2021U1067',
+'2021U1068',
+'2021U1069',
+'2021U1070',
+'2021U1071']
+var emailss =[
+'aarthia2021@iifpt.edu.in',
+'aishwaryals2021@iifpt.edu.in',
+'AjiteshS2021@iifpt.edu.in',
+'akashb2021@iifpt.edu.in',
+'amirthaVA@iifpt.edu.in',
+'anandhakm2021@iifpt.edu.in',
+'aninditbizyn2021@iifpt.edu.in',
+'anushar2021@iifpt.edu.in',
+'archanap2021@iifpt.edu.in',
+'avantikac2021@iifpt.edu.in',
+'ChandrikaDH2021@iifpt.edu.in',
+'chitturirohith2021@iifpt.edu.in',
+'CubaraniH2021@iifpt.edu.in',
+'DavidEvander2021@iifpt.edu.in',
+'dhanaselvamkr2021@iifpt.edu.in',
+'dianacelciar2021@iifpt.edu.in',
+'diyadharshinis2021@iifpt.edu.in',
+'ethayad2021@iifpt.edu.in',
+'gautamnayak2021@iifpt.edu.in',
+'ginurobtusr2021@iifpt.edu.in',
+'guberavishnus2021@iifpt.edu.in',
+'GugulothSridhar2021@iifpt.edu.in',
+'himavanthr2021@iifpt.edu.in',
+'JeganP2021@iifpt.edu.in',
+'jenishdanielB2021@iifpt.edu.in',
+'JoshuaCharles2021@iifpt.edu.in',
+'kkabilan2021@iifpt.edu.in',
+'karyamsetty2021@iifpt.edu.in',
+'keerthikap2021@iifpt.edu.in',
+'KevinFrancis2021@iifpt.edu.in',
+'kisham2021@iifpt.edu.in',
+'KotaLakshmiS2021@iifpt.edu.in',
+'lakshminarayanans2021@iifpt.edu.in',
+'lakshmisruthil2021@iifpt.edu.in',
+'lavudyasaikumar2021@iifpt.edu.in',
+'mahabirprasads2021@iifpt.edu.in',
+'MerlaAP2021@iifpt.edu.in',
+'mohamedtharifnj2021@iifpt.edu.in',
+'MohannathShroffJ2021@iifpt.edu.in',
+'mamoneshram2021@iifpt.edu.in',
+'MudavathAnjali2021@iifpt.edu.in',
+'muthurajak2021@iifpt.edu.in',
+'nitheeshrl2021@iifpt.edu.in',
+'nithishjp2021@iifpt.edu.in',
+'padmajaM2021@iifpt.edu.in',
+'pranavnandakishore@gmail.com',
+'punithavathid2021@iifpt.edu.in',
+'RakshithapriyaS2021@iifpt.edu.in',
+'JSanjeeth2021@iifpt.edu.in',
+'Santhoshkumarp2021@iifpt.edu.in',
+'jhashivam9007@gmail.com',
+'sivashreesk2021@iifpt.edu.in',
+'sriharinis2021@iifpt.edu.in',
+'srinithicp2021@iifpt.edu.in',
+'srivatsanv2021@iifpt.edu.in',
+'subbukrishna2021@iifpt.edu.in',
+'sumankumar2021@iifpt.edu.in',
+'SurendarS2021@iifpt.edu.in',
+'TippaletiSrujana2021@iifpt.edu.in',
+'VemulaUharika2021@iifpt.edu.in',
+'vishnuvarthant2021@iifpt.edu.in',
+'YadlaGaneshB2021@iifpt.edu.in',
+'nrykn58@gmail.com',
+];
+for (var i = 0; i < names.length; i++) {
+  
+if (name == names[i]){
+id.value = ids[i];
+id.placeholder = ids[i];
+email.value = emailss[i];
+email.placeholder = emailss[i];
+}
+}
+}
+function checklinked(){
+
+}
+function checkiupload(){
+  let detail = document.getElementById('Internships');
+  let up = document.getElementById('i3');
+  let lup = document.getElementById('fileurl3');
+  if (detail.value !== ""){
+    up.required = true; 
+    lup.name = "Internships Files D.link";
+    console.log(lup.name);
+   }
+   else{
+    up.required = false;
+    lup.name = "Internships Files Link";
+    console.log(lup.name);
+   }
+}
+function checktupload(){
+  let detail = document.getElementById('Trainings and certifications');
+  let up = document.getElementById('i2');
+  let lup = document.getElementById('fileurl2');
+  if (detail.value !== ""){
+    up.required = true; 
+    lup.name = "Trainings and certifications Files D.link";
+    console.log(lup.name);
+   }
+   else{
+    up.required = false;
+    lup.name = "Trainings and certifications Files Link";
+    console.log(lup.name);
+   }
+}
+</script>
+<script src="script.js"></script>
+</section>
+</body>
+</html>

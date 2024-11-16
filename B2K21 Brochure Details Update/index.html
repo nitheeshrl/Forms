@@ -1,0 +1,526 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="white_logo.png" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Brochure Update Requests</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="style 1.css" />
+    <link rel="stylesheet" type="text/css" href="style 2.css">
+    <script>
+      window.location="http://pcniftemt.pages.dev/";
+    </script>
+    <style>
+         table .approve{
+            border-radius: 20px;
+            padding: 10px;
+            color: white;
+            font-weight: bolder;
+    background-color: green;
+    margin-right: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+ table .decline{
+    border-radius: 20px;
+    padding: 10px;
+    color: white;
+    font-weight: bolder;
+    background-color: red;
+    margin-right: 20px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .tablebee{
+    display: none;
+}
+.btn{
+    background-color:#182d8b;
+    margin-right: 20px;
+    text-decoration: none;
+    color: white;
+    border-radius: 20px;
+    padding: 20px;
+    cursor: pointer;
+  }
+  .btn1{
+    background-color:#182d8b;
+height: 40px;
+    text-decoration: none;
+    color: white;
+    border-radius: 20px;
+    padding:12px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+    </style>
+</head>
+
+<body>
+
+    <section class="header" >
+  
+    <div style="width: 20%;">
+     
+    </div>
+    <div style="display: flex;justify-content: center;align-items: center;">
+      <img src="white_logo.png" alt="">
+    <h1>NIFTEM-T Placement Cell</h1>
+    </div>
+
+    <div class="logname" >
+    <p ><span id="mname"></span></p>
+
+    </div>
+    </section>
+    <main style="margin-top: 30px;" class="table" id="customers_table">
+        <section class="table__header">
+            <h1>Active Update Requests</h1>
+            <a class="btn1" id="pbtn" href="past.html?ui=">Past Requests</a>
+            <div class="input-group">
+                <input  type="search" placeholder="Search..." >
+                <img src="images/search.png" alt="">
+            </div>
+
+        </section>
+
+       <section id="tablebee" class="tablebee">         
+        <section  class="table__body" >
+            <table>
+                <thead>
+                    <tr>
+                        <th><b>Request ID</b></th>
+                        <th><b>Name of the Student</b></th>
+                        <th><b>Content to be changed</b></th>
+                        <th><b>Old Data</b></th>
+                        <th><b>New Data</b></th>
+                        <th class="arp"><b>Approve or Decline</b></th>
+                    </tr>
+                </thead>
+                <tbody id="tabdetails" >
+
+                </tbody>
+            </table>
+
+        </section>
+    </section> 
+
+    <section class="msg" >
+
+        <h1 style="text-align: center;"></h1>
+        <div   id="dfiled" style="align-content:normal; margin-left: 0px;margin-right: auto; margin-top: 30px;"><p style="text-align: left;">
+            <div ></div> <span id = "status"></span></p></div>
+            </p>
+            </section>
+            <section style="height: 100px; display: flex;justify-content: center;">
+      
+            </section>
+    </main>
+    <div id="load" class="load" > 
+        <div class="loader" id="loader"> 
+      
+          </div> 
+          <div
+            id="message"
+          class="message"
+          style="width: 350px;"
+            ></div>
+        </div>      
+  
+    <div class="popup" id="popup-1">
+ 
+        <div class="overlay"></div>
+    
+        <div class="content">
+    
+        <div class="close-btn" onclick="togglePopup()">&times;</div>
+    
+        <h1 style="margin-top: 50px;">Confirm Update Approval</h1>
+    
+        <p style="margin-bottom: 40px;">Are you sure you wish to approve the Brochure details update? </p>
+        <div >
+            <input id="aid" type="hidden" value="">
+    <a class="btn" id="apbt" onclick="approve()">Confirm</a>
+    <a class="btn" onclick="togglePopup()">Cancel</a>
+        </div>
+        </div>
+    
+        </div>
+    <div class="popup" id="popup-2">
+
+        <div class="overlay"></div>
+    
+        <div class="content" style="height:400px;">
+    
+        <div class="close-btn" onclick="togglePopup2()">&times;</div>
+    
+        <h1 style="margin-top: 50px;">Confirm Update Decline</h1>
+    
+        <p style="margin-bottom: 40px;">Are you sure you wish to decline the Brochure details update? </p>
+        <div >
+            <div class="form-element" style=" flex-direction: column;align-items: flex-start; width: 100%;margin-bottom: 40px;">
+                <span class="q" >Reason for decline</span>
+                <input type="text" name="Reason" id="Reason" style="width: 100%;" placeholder="Enter the reason" />
+                </div>
+                <input id="did" type="hidden" value="">
+    <a class="btn" id="decbt" onclick="decline()" style="background-color: red;">Decline</a>
+    <a class="btn" onclick="togglePopup2()">Cancel</a>
+        </div>
+        </div>
+    
+        </div>
+    <script src="script.js"></script>
+    <script src="script1.js"></script>
+ <script>
+        function approvePopup(id){
+            console.log("ok")
+    document.getElementById("popup-1").classList.toggle("active");
+    document.getElementById("aid").value = id;
+    
+    }
+    function togglePopup(){
+    document.getElementById("popup-1").classList.toggle("active");
+    }
+    function declinePopup(id){
+        console.log("ok")
+    document.getElementById("popup-2").classList.toggle("active");
+    document.getElementById("did").value = id;
+    
+    }
+    function togglePopup2(){
+    document.getElementById("popup-2").classList.toggle("active");
+    }
+    var fetchurl ="";
+          var uname ;
+          const keyvalues = window.location.search;
+      const value = new URLSearchParams(keyvalues);
+      const idvalue = value.get('ui');
+      document.getElementById("pbtn").href += idvalue;
+   
+  
+      var uids = [
+        "398",
+        "756",
+        "652",
+        "235",
+        "453",
+       "648",
+        "378",
+        "345",
+        "904",
+        "413",
+        "254",
+        "890"
+    ];
+    var inames = [
+    'Anandha Keerthy M',
+    'Anindit Bizy Nair',
+    'David Evander Jebson S',
+    'Keerthika P',
+    'Nitheesh R L',
+    'Shivam Jha',
+    'Srinithi C P',
+    'Subbu Krishna Sharma GM ',
+    'Yuvashreekantham R',
+    'R B Ramyaa',
+    'Anjali S',
+    'Mathangi G'
+    ]
+    var iurls = [
+'https://script.google.com/macros/s/AKfycbxzHeGu3z7ChHoOQf4Lw1qgvY1kUL8lAs0mQAmTkwYaELXnCVy6gUm3nmUNHfhh0EGsOQ/exec',
+'https://script.google.com/macros/s/AKfycbw6wbhOcrcyoOFuRn8RPSgZxdLnFbROVG2C6gu033ep9l6kk8GRFg6fKJQVX-yvzaOyrA/exec',
+'https://script.google.com/macros/s/AKfycby0bpezZTGSTIBGxkSa4LymvbBYP68ro7LJ_aeL-TpRwoUtgq7J9jGtlNrPrpSFtLdMPw/exec',
+'https://script.google.com/macros/s/AKfycbyPmVOKmWhJLFSSrXJucIFWn4HLqE5R-YaFy7fUfgd65GvuodABle1vHoQyK-idGYlq/exec',
+'https://script.google.com/macros/s/AKfycbxEp-AGZgECifFXwbKOWXrVlKItShDBaqlQy1nNGXElI6BR6SJVeHntpWOBvT4GvkJFOA/exec',
+'https://script.google.com/macros/s/AKfycbwXeCVS5KRLG_-fivdhmhV3Gj8mRPEDkDnqXeSsJFglqDmSHOeEk5snIeq3ujxGrUM/exec',
+'https://script.google.com/macros/s/AKfycbyJ1XeGgRqAjR44TB_hTjLEyCMA7XHhv5hASQdRp2LqnAYxcfUm3NmYeHTZP7MwJRea/exec',
+'https://script.google.com/macros/s/AKfycbx6MTdLho6wKtsbAZYfTym8KS_3NdNTzhyQD29Ls8Ww9Bk1Nuw40-kF1KWSTAJY90d2/exec',
+'https://script.google.com/macros/s/AKfycby_oUg1_sTnZF5kTyG70JaA0DN_fSwhmFfnqph-Wnc-EU1UuvRxDahY_acAlwt9udo/exec'
+    ]
+    for (var i = 0; i < uids.length; i++) {
+    
+      if (idvalue == uids[i]){
+    uname = inames[i];
+    fetchurl = iurls[i];
+      }
+    }
+    console.log(uname)
+    console.log(fetchurl)
+
+    document.getElementById("mname").innerHTML = "<b>Logged Member:</b> "+uname;
+    if (idvalue == undefined||uname==undefined){
+      alert("Update through the given link");
+      window.location="unauthorised.html"
+    }
+    document.getElementById("load").style.display="initial";
+            document.getElementById("loader").style.display="block"; 
+            document.getElementById("message").textContent = "Fetching requests....";
+       function fetchd (){
+        console.log("fetch")
+        var details ="";
+        fetch(
+     
+     "https://script.google.com/macros/s/AKfycby-UyjL65XZQwdTF8zxr9imkNypLpqeP-PZ6RMLPlnbzGQY8M7PLF0Mqj6cZV3ZZ_OP/exec",
+     {
+       redirect: "follow",
+       method: "POST",
+       body: uname,
+       headers: {
+         "Content-Type": "text/plain;charset=utf-8",
+       },
+     }
+    )
+    
+     .then(function (response) {
+    
+       // Check if the request was successful
+       if (response) {
+    
+         return response; // Assuming your script returns JSON response
+       } else {
+         throw new Error("Failed to fetch.");
+       }
+     })
+     .then(async function (data) {
+    const result1 = await data.json();
+    
+    var r = result1.data2;
+    console.log(r);
+    for(var k=0; k<r.length;k++){
+        var detail ="";
+    
+        var head = r[k][2].split("<br>");
+        var olddata = r[k][3].split("<br>");
+        var newdata = r[k][4].split("<br>");
+        for(var j=1; j<head.length;j++){
+          if (j==head.length-1 && j==1){
+            var spanno1 = head.length ;
+                var spanno = spanno1 -1;
+                console.log(spanno)
+                if(head[j].includes("CV") || head[j].includes("Files")){
+              console.log("inn")
+              detail += '<tr class="lasttr"><td rowspan="'+spanno+'">'+r[k][0]+'</td><td rowspan="'+spanno+'">'+r[k][1]+'</td> <td><b>'+head[j]+'</b></td><td><a class="btn1" href="'+olddata[j]+'" target="_blank">View</a></td><td><a class="btn1" href="'+newdata[j]+'" target="_blank">View</a>'+'</td><td rowspan="'+spanno+'"><a class="approve" onclick="approvePopup(`'+r[k][0]+"/"+r[k][1]+'`)" >Approve</a><a class="decline" onclick="declinePopup(`'+r[k][0]+"/"+r[k][1]+'`)" >Decline</a></td> </tr>';
+            }
+
+            else{
+                detail += '<tr class="lasttr"><td rowspan="'+spanno+'">'+r[k][0]+'</td><td rowspan="'+spanno+'">'+r[k][1]+'</td> <td><b>'+head[j]+'</b></td><td>'+olddata[j]+'</td><td>'+newdata[j]+'</td><td rowspan="'+spanno+'"><a class="approve" onclick="approvePopup(`'+r[k][0]+"/"+r[k][1]+'`)" >Approve</a><a class="decline" onclick="declinePopup(`'+r[k][0]+"/"+r[k][1]+'`)" >Decline</a></td> </tr>';
+            } 
+          }
+            else   if (j==1){
+                var spanno1 = head.length ;
+                var spanno = spanno1 -1;
+                console.log(spanno)
+                if(head[j].includes("CV") || head[j].includes("Files")){
+              console.log("inn")
+              detail += '<tr><td rowspan="'+spanno+'">'+r[k][0]+'</td><td rowspan="'+spanno+'">'+r[k][1]+'</td> <td><b>'+head[j]+'</b></td><td><a class="btn1" href="'+olddata[j]+'" target="_blank">View</a></td><td><a class="btn1" href="'+newdata[j]+'" target="_blank">View</a>'+'</td><td rowspan="'+spanno+'"><a class="approve" onclick="approvePopup(`'+r[k][0]+"/"+r[k][1]+'`)" >Approve</a><a class="decline" onclick="declinePopup(`'+r[k][0]+"/"+r[k][1]+'`)" >Decline</a></td> </tr>';
+            }
+
+            else{
+                detail += '<tr><td rowspan="'+spanno+'">'+r[k][0]+'</td><td rowspan="'+spanno+'">'+r[k][1]+'</td> <td><b>'+head[j]+'</b></td><td>'+olddata[j]+'</td><td>'+newdata[j]+'</td><td rowspan="'+spanno+'"><a class="approve" onclick="approvePopup(`'+r[k][0]+"/"+r[k][1]+'`)" >Approve</a><a class="decline" onclick="declinePopup(`'+r[k][0]+"/"+r[k][1]+'`)" >Decline</a></td> </tr>';
+           
+            }
+          }
+          else if (j==head.length-1){
+            var spanno1 = head.length ;
+                var spanno = spanno1 -1;
+                console.log(spanno)
+                if(head[j].includes("CV") || head[j].includes("Files")){
+              console.log("inn")
+              detail +='<tr class="lasttr"><td><b>'+head[j]+'</b></td> <td><a class="btn1" href="'+olddata[j]+'" target="_blank">View</a></td><td><a class="btn1" href="'+newdata[j]+'" target="_blank">View</a></td></tr>';
+            }
+
+            else{
+              detail +='<tr class="lasttr"><td><b>'+head[j]+'</b></td> <td>'+olddata[j]+'</td><td>'+newdata[j]+'</td></tr>';
+            }
+                }
+
+            else{
+              
+            if(head[j].includes("CV") || head[j].includes("Files")){
+              console.log("inn")
+              detail +='<tr><td><b>'+head[j]+'</b></td> <td><a class="btn1" href="'+olddata[j]+'" target="_blank">View</a></td><td><a class="btn1" href="'+newdata[j]+'" target="_blank">View</a></td></tr>';
+            }
+    else{
+               detail +='<tr><td><b>'+head[j]+'</b></td> <td>'+olddata[j]+'</td><td>'+newdata[j]+'</td></tr>';
+    }
+            }
+
+        }
+    console.log(detail)
+    console.log(details) 
+        details = details + detail;
+        console.log(details) 
+    }
+    console.log(details)
+    if (details!==""){
+    document.getElementById("tabdetails").innerHTML = details;
+    document.getElementById("tablebee").style.display = "initial";
+    }
+    else{
+      document.getElementById("tablebee").style.display = "none";
+        document.getElementById("status").style.display = "initial";
+        document.getElementById("status").textContent = "No Active Update Requests";
+
+    }
+    document.getElementById("loader").style.display="none"; 
+                    document.getElementById("message").textContent = "";
+                    document.getElementById("load").style.display = "none";
+
+            
+    })
+    
+    .catch(function (error) {
+    // Handle errors, you can display an error message here
+    console.error(error);
+    document.getElementById("loader").style.display="none"; 
+    document.getElementById("message").textContent =
+    "Failed to fetch.";
+    document.getElementById("message").style.display = "block";
+    });
+       }
+       fetchd ();
+    
+    function approve(){
+      var id =  document.getElementById("aid").value;
+      id = id.split("/");
+      
+        console.log(id);
+        togglePopup();
+        var updatede = id[0]+"/"+"Approve"+"/"+"";
+        updatedetails(updatede,id[0],id[1]);
+    }
+    function decline(){
+        var id =  document.getElementById("did").value;
+        id = id.split("/");
+        var Reason =  document.getElementById("Reason").value;
+        console.log(id);
+        console.log(Reason);
+        if(Reason!==""){
+        togglePopup2();
+        var updatede = id[0]+"/"+"Decline"+"/"+Reason;
+        updatedetails(updatede,id[0],id[1]);
+        }
+        else{
+            alert("Enter the reason for decline")
+        }
+    }
+    function sendmail (name,id){
+      
+      document.getElementById("load").style.display="initial";
+            document.getElementById("loader").style.display="block"; 
+            document.getElementById("message").textContent = "Sending Mail to "+name+"...";
+            
+            
+              console.log(id)
+
+    fetch(
+     
+                  fetchurl,
+                  {
+                    redirect: "follow",
+                    method: "POST",
+                    body: id,
+                    headers: {
+                      "Content-Type": "text/plain;charset=utf-8",
+                    },
+                  }
+                )
+        
+                  .then(function (response) {
+        
+                    // Check if the request was successful
+                    if (response) {
+                 
+                      return response; // Assuming your script returns JSON response
+                    } else {
+                      throw new Error("Failed to send the mail.");
+                    }
+                  })
+                  .then(async function (data) {
+            const result1 = await data.json();
+      
+            var r = result1.data2;
+    console.log(r);
+    if(r == "sent"){
+        document.getElementById("loader").style.display="none"; 
+                    document.getElementById("message").textContent =
+                     "Mail Sent to "+name;
+                    document.getElementById("message").style.display = "block";
+                    setTimeout(function () { document.getElementById("load").style.display="none"; },2000);
+    
+                  
+    }
+    
+    
+          })
+    
+          .catch(function (error) {
+            // Handle errors, you can display an error message here
+            console.error(error);
+            document.getElementById("loader").style.display="none"; 
+            document.getElementById("message").textContent =
+              "Failed to Send the Mail.";
+            document.getElementById("message").style.display = "block";
+          });
+    }
+    function updatedetails(updatestring,id,name){
+        document.getElementById("load").style.display="initial";
+            document.getElementById("loader").style.display="block"; 
+            document.getElementById("message").textContent = "Proceesing the request....";
+            
+        fetch(
+     
+     "https://script.google.com/macros/s/AKfycbxnl13iMMpRvTpLJW0I5JzGq5jkk4v2f1N7YyjCUVVYAdbrlrLdDjP5Mr517_fG2QOn/exec",
+     {
+       redirect: "follow",
+       method: "POST",
+       body: updatestring,
+       headers: {
+         "Content-Type": "text/plain;charset=utf-8",
+       },
+     }
+    )
+    
+     .then(function (response) {
+    
+       // Check if the request was successful
+       if (response) {
+    
+         return response; // Assuming your script returns JSON response
+       } else {
+         throw new Error("Failed to fetch.");
+       }
+     })
+     .then(async function (data) {
+    const result1 = await data.json();
+    
+    var r = result1.data2;
+    console.log(r);
+    fetchd ();
+    document.getElementById("loader").style.display="none"; 
+      document.getElementById("message").textContent = "Processed";
+     document.getElementById("message").style.display = "block";
+      setTimeout(function () { document.getElementById("load").style.display="none";
+    sendmail (name,id);
+    
+    },2000);
+    
+    })
+    
+    .catch(function (error) {
+    // Handle errors, you can display an error message here
+    console.error(error);
+    document.getElementById("loader").style.display="none"; 
+    document.getElementById("message").textContent =
+    "Failed to fetch.";
+    document.getElementById("message").style.display = "block";
+    });
+    }
+    </script>
+</body>
+
+</html>

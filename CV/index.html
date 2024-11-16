@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="widthdevice-width, initial-scale=1">
+    <link rel="icon" href="white_logo.png" type="image/x-icon">
+    <title>CV Loading..</title>  
+    <link rel="stylesheet" href="style.css" />
+
+</head>    
+<body>
+  <section class="header">
+    <div>
+    <img src="white_logo.png" alt="">
+    </div>
+    <div>
+    <h1>NIFTEM-T Placement Cell</h1>
+    </div>
+    </section>
+    <form id="form" class="container m-4 pl-4" style="width: 100%;">
+
+    <h3 id="ll" style="text-align: center;">CV Loading....</h3>
+    </form>
+<script>
+  const keyvalues = window.location.search;
+  const value = new URLSearchParams(keyvalues);
+  const idvalue = value.get('id');
+  var formDataString = idvalue;
+  console.log(formDataString);
+            // Send a POST request to your Google Apps Script
+            fetch(
+              "https://script.google.com/macros/s/AKfycby2IOyLXsRtZP7_zDn6AFG6GwhRg01F8U7wAoR1swhseWcQnZaq8oJaX0B0-PoWZ6VW/exec",
+              {
+                redirect: "follow",
+                method: "POST",
+                body: formDataString,
+                headers: {
+                  "Content-Type": "text/plain;charset=utf-8",
+                },
+              }
+            )
+    
+              .then(function (response) {
+    
+                // Check if the request was successful
+                if (response) {
+             
+                  return response; // Assuming your script returns JSON response
+                } else {
+                  throw new Error("Failed to submit the form.");
+                }
+              })
+              .then(async function (data) {
+                const result1 = await data.json();
+          
+var cr = result1.data2;
+console.log(cr);
+
+window.location = cr;
+
+
+              })
+    
+              .catch(function (error) {
+                // Handle errors, you can display an error message here
+                console.error(error);
+                document.getElementById("message").textContent =
+                  "An error occurred while sending the otp.";
+                document.getElementById("message").style.display = "block";
+              });
+
+
+    </script>
+    </body>
+    </html>

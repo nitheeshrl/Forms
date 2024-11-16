@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="widthdevice-width, initial-scale=1">
+    <link rel="icon" href="white_logo.png" type="image/x-icon">
+    <title>Placement Brochure Form</title>  
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      window.onload=getstatus();
+       function getstatus(){
+   const url = "https://script.google.com/macros/s/AKfycbxR9JjLW-_xKlNmW7-2OmoqYeHLkfZn45DJL-kazZ4Nl_gGqbUNwJk96DmvpyGzxAPp/exec" 
+   var val = "Placement Brochure Form M.Tech";
+   console.log(val)
+   fetch(`${url}?header=${val}`)
+       .then((response) => response.json())
+       .then(({ data }) => {
+           if (data == "Live"){
+   
+               document.getElementById("frqa").style.display="initial";
+               document.getElementById("ll").textContent="";
+   
+               }
+               else if (data == "Inactive"){
+                 document.getElementById("frqa").style.display="none";
+                 window.location='end.html';
+               }
+       })
+       .catch((error) => console.error('!!!!!!!!', error));
+   }
+   </script>
+</head>    
+<body>
+<section class="header">
+<div>
+<img src="white_logo.png" alt="">
+</div>
+<div>
+<h1>NIFTEM-T Placement Cell</h1>
+</div>
+</section>
+<section >
+<div class="form-container">
+<script type="text/javascript">var submitted=false </script>
+<iframe name="hiddenConfirm" id="hiddenConfirm" style="display: none;" onload="if(submitted){
+    window.location='submission.html'; }"></iframe>
+    <form id="form" class="container m-4 pl-4" method="POST">
+<h1 style="text-align: center;"> Placement Brochure Form </h1>
+<h3 id="ll" style="text-align: center;">Form Loading....</h3>
+<div id="frqa" class="frqa">
+<div class="form-element">
+  <span class="q">Name</span>
+<select  name="Name" id="Name" onchange="matchnameid()" required placeholder="Select your name">
+  <option value="">Select your name</option>
+<option value='Bommi Durga Naga Sai Sri Sruthileena'>Bommi Durga Naga Sai Sri Sruthileena</option>
+<option value='Damini H S'>Damini H S</option>
+<option value='Gokul Raj R'>Gokul Raj R</option>
+<option value='Midhuna Kurian'>Midhuna Kurian</option>
+<option value='Parkhe Prajwal Anilkumar'>Parkhe Prajwal Anilkumar</option>
+<option value='Praveena B'>Praveena B</option>
+<option value='R B Ramyaa'>R B Ramyaa</option>
+<option value='Sathishwaran S'>Sathishwaran S</option>
+<option value='V R Bharathvaj'>V R Bharathvaj</option>
+<option value='Vidhyadharan A'>Vidhyadharan A</option>
+<option value='Yogesh M A'>Yogesh M A</option>
+<option value='Anjali S'>Anjali S</option>
+<option value='Anshida P K'>Anshida P K</option>
+<option value='Hari Priya J'>Hari Priya J</option>
+<option value='Harish S'>Harish S</option>
+<option value='Hayanthika M S'>Hayanthika M S</option>
+<option value='Irfana Z'>Irfana Z</option>
+<option value='Jesi Feleciya P'>Jesi Feleciya P</option>
+<option value='Kadimi Lakshmi Devi'>Kadimi Lakshmi Devi</option>
+<option value='Karthick Ajay B'>Karthick Ajay B</option>
+<option value='Kolli Venkata Naga Mallikarjuna Reddy'>Kolli Venkata Naga Mallikarjuna Reddy</option>
+<option value='Subathra M'>Subathra M</option>
+<option value='Nandana M'>Nandana M</option>
+<option value='Shaliha A'>Shaliha A</option>
+<option value='Sruti Chandra'>Sruti Chandra</option>
+<option value='Sushmithasri R'>Sushmithasri R</option>
+<option value='Abhijith K'>Abhijith K</option>
+<option value='Atava Lokesh'>Atava Lokesh</option>
+<option value='Ishwarya Lakshmi S'>Ishwarya Lakshmi S</option>
+<option value='Joseph P J'>Joseph P J</option>
+<option value='Mani Bharathi G'>Mani Bharathi G</option>
+<option value='Manikandan T'>Manikandan T</option>
+<option value='Mathangi G'>Mathangi G</option>
+<option value='Mulukuri Naveena'>Mulukuri Naveena</option>
+<option value='Rajasri C'>Rajasri C</option>
+<option value='Shanmugapriya R'>Shanmugapriya R</option>
+<option value='Sujithra M'>Sujithra M</option>
+<option value='Trivedi Nidhi Deepak'>Trivedi Nidhi Deepak</option>
+<option value='Muthumeena J'>Muthumeena J</option>
+<option value='Srivigneswar S'>Srivigneswar S</option>
+</select>
+
+</div>
+<div class="form-element">
+<span class="q">ID Number</span>
+<input readonly type="text" name="ID Number" id="ID Number" required placeholder="Enter your ID number" />
+</div>
+<div class="form-element">
+<span class="q">Email address</span>
+<input  type="email" name="Email address" id="Email address" required placeholder="Enter your email"/>
+</div>
+<div class="form-element">
+<span class="q">Skills</span>
+<textarea required name="Skills" id="Skills"></textarea>
+</div>
+<div class="form-element">
+<span class="q">Trainings and certifications</span>
+<textarea name="Trainings and certifications" id="Trainings and certifications" onchange="checktupload()"></textarea>
+</div>
+<div class="form-element">
+<span class="q">Upload your Trainings and certifications Files</span>
+<input id="i2" type="file" accept=".pdf" name="file" width="10" height="100"/>
+<input id="fileurl2" type="hidden" name="Trainings and certifications Files Link" value=""/>
+<span style="color: red;font-size: 12px;">Compile all files in one pdf</span>
+</div>
+<div class="form-element">
+<span class="q">Internships</span>
+<textarea  name="Internships" id="Internships" onchange="checkiupload()"></textarea>
+</div>
+<div class="form-element">
+<span class="q">Upload your Internships Files</span>
+<input id="i3" type="file" accept=".pdf" name="file" width="10" height="100"/>
+<input id="fileurl3" type="hidden" name="Internships Files Link" value=""/>
+<span style="color: red;font-size: 12px;">Compile all files in one pdf</span>
+</div>
+<div class="form-element">
+<span class="q">Known Languages</span>
+<textarea required name="Known Languages" id="Known Languages"></textarea>
+</div>
+<div class="form-element">
+<span class="q">Project title</span>
+<input type="text" name="Project title" id="Project title" required placeholder="Enter your Project title" />
+</div>
+<div class="form-element">
+<span class="q">Linkedin Profile Link</span>
+<input  type="url" name="Linkedin Profile Link" id="Linkedin Profile Link" required placeholder="Enter your Linkedin Profile Link" />
+</div>
+<div class="form-element">
+<span class="q">Upload your Linkedin QR</span>
+<input required id="i4" type="file" accept="image/*" name="file" width="10" height="100"/>
+<input id="fileurl4" type="hidden" name="Linkedin QR D.link" value=""/>
+</div>
+<div class="form-element">
+<span class="q">Upload your CV </span>
+<span style="color: red;font-size: 12px;">Upload only in word document. <br> After Submission, Editing link will be provided through the mail.</span>
+<input required id="i5" type="file" accept=".doc,.docx" name="file" width="10" height="100"/>
+<input id="fileurl5" type="hidden" name="CV D.link" value=""/>
+</div>
+
+<button style="margin-top: 20px;" type="submit" id="bt"> 
+Submit
+</button> 
+<div id="load" class="load" > 
+  <div class="loader" id="loader"> 
+
+    </div> 
+    <div
+      id="message"
+    class="message"
+      ></div>
+  </div> 
+</div>
+<script>
+document.getElementById("form").addEventListener("submit", function (e) {
+  e.preventDefault(); // Prevent the default form submission
+  let linurl = document.getElementById('Linkedin Profile Link').value;
+  let emailcheck = document.getElementById('Email address').value;
+  let bt = document.getElementById('bt');
+  if (emailcheck.includes("iifpt.edu.in")==false){
+    alert("Enter Official Email ID")
+  }
+  else{
+  if (linurl.includes("linkedin")){
+
+      
+        document.getElementById("load").style.display="initial";
+  document.getElementById("loader").style.display="block"; 
+  document.getElementById("bt").style.display="none";
+        document.getElementById("message").textContent = "Submitting..";
+        document.getElementById("message").style.display = "block";
+        document.getElementById("bt").disabled = true;
+
+        // Collect the form data
+        var formData = new FormData(this);
+        var keyValuePairs = [];
+        for (var pair of formData.entries()) {
+          keyValuePairs.push(pair[0] + "=val=" + pair[1]);
+        }
+
+        var formDataString = keyValuePairs.join("=namff=");
+        console.log(formDataString)
+
+        // Send a POST request to your Google Apps Script
+        fetch(
+          "https://script.google.com/macros/s/AKfycbzQ-QZXgsLLluRsegUkqwsK_BIqk_WZ18V9Xo6JoYXndNVYZaR3OoseWBr9iabDaxDZ/exec",
+          {
+            redirect: "follow",
+            method: "POST",
+            body: formDataString,
+            headers: {
+              "Content-Type": "text/plain;charset=utf-8",
+            },
+          }
+        )
+          .then(function (response) {
+            // Check if the request was successful
+            if (response) {
+              return response; // Assuming your script returns JSON response
+            } else {
+              throw new Error("Failed to submit the form.");
+            }
+          })
+          .then(async function (data) {
+            const result1 = await data.json();
+            console.log(result1.data2);
+            if (result1.data2 == "accept"){
+            // Display a success message
+            document.getElementById("bt").disabled = false;
+            document.getElementById("form").reset();
+            window.location='submission.html';
+            setTimeout(function () {
+              document.getElementById("message").textContent = "";
+              document.getElementById("message").style.display = "none";
+            }, 2600);}
+            else if (result1.data2 == "reject"){
+              window.location='reject.html';
+            }
+          })
+          .catch(function (error) {
+            // Handle errors, you can display an error message here
+            console.error(error);
+            document.getElementById("message").textContent =
+              "An error occurred while submitting the form.";
+            document.getElementById("message").style.display = "block";
+          });
+        }
+  else{
+
+    alert("Enter correct Linkedin URL")
+  }
+}
+      });
+
+      function matchnameid(){
+  let id = document.getElementById('ID Number');
+  let name = document.getElementById('Name').value;
+  var names =['Bommi Durga Naga Sai Sri Sruthileena',
+'Damini H S',
+'Gokul Raj R',
+'Midhuna Kurian',
+'Parkhe Prajwal Anilkumar',
+'Praveena B',
+'R B Ramyaa',
+'Sathishwaran S',
+'V R Bharathvaj',
+'Vidhyadharan A',
+'Yogesh M A',
+'Anjali S',
+'Anshida P K',
+'Hari Priya J',
+'Harish S',
+'Hayanthika M S',
+'Irfana Z',
+'Jesi Feleciya P',
+'Kadimi Lakshmi Devi',
+'Karthick Ajay B',
+'Kolli Venkata Naga Mallikarjuna Reddy',
+'Subathra M',
+'Nandana M', 
+'Shaliha A', 
+'Sruti Chandra', 
+'Sushmithasri R', 
+'Abhijith K',
+'Atava Lokesh',
+'Ishwarya Lakshmi S',
+'Joseph P J',
+'Mani Bharathi G',
+'Manikandan T',
+'Mathangi G',
+'Mulukuri Naveena',
+'Rajasri C',
+'Shanmugapriya R',
+'Sujithra M',
+'Trivedi Nidhi Deepak',
+'Muthumeena J', 
+'Srivigneswar S' ]
+var ids = ['2023P1001',
+'2023P1002',
+'2023P1003',
+'2023P1004',
+'2023P1005',
+'2023P1006',
+'2023P1007',
+'2023P1008',
+'2023P1010',
+'2023P1011',
+'2023P1012',
+'2023P2001',
+'2023P2002',
+'2023P2004',
+'2023P2005',
+'2023P2006',
+'2023P2007',
+'2023P2008',
+'2023P2009',
+'2023P2010',
+'2023P2011',
+'2023P2015',
+'2023P2012',
+'2023P2013',
+'2023P2014',
+'2023P2016',
+'2023P3001',
+'2023P3002',
+'2023P3004',
+'2023P3005',
+'2023P3006',
+'2023P3007',
+'2023P3008',
+'2023P3009',
+'2023P3012',
+'2023P3013',
+'2023P3015',
+'2023P3016',
+
+'2023P3010',
+'2023P3014'
+]
+
+for (var i = 0; i < names.length; i++) {
+  
+if (name == names[i]){
+id.value = ids[i];
+id.placeholder = ids[i];
+}
+}
+}
+function checklinked(){
+
+}
+function checkiupload(){
+  let detail = document.getElementById('Internships');
+  let up = document.getElementById('i3');
+  let lup = document.getElementById('fileurl3');
+  if (detail.value !== ""){
+    up.required = true; 
+    lup.name = "Internships Files D.link";
+    console.log(lup.name);
+   }
+   else{
+    up.required = false;
+    lup.name = "Internships Files Link";
+    console.log(lup.name);
+   }
+}
+function checktupload(){
+  let detail = document.getElementById('Trainings and certifications');
+  let up = document.getElementById('i2');
+  let lup = document.getElementById('fileurl2');
+  if (detail.value !== ""){
+    up.required = true; 
+    lup.name = "Trainings and certifications Files D.link";
+    console.log(lup.name);
+   }
+   else{
+    up.required = false;
+    lup.name = "Trainings and certifications Files Link";
+    console.log(lup.name);
+   }
+}
+</script>
+<script src="script.js"></script>
+</section>
+</body>
+</html>
