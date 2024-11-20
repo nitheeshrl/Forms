@@ -54,6 +54,9 @@ console.log(idvalue)
                 document.getElementById("previewlink").style.display="initial";
                 document.getElementById("frqa").style.display="none";
                }
+               else if (data == "Not Found"){
+    alert("Form not found")
+  }
        })
        .catch((error) => console.error('!!!!!!!!', error));
    }
