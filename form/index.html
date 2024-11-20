@@ -48,7 +48,7 @@ console.log(idvalue)
                  document.getElementById("frqa").style.display="none";
                  window.location='end.html';
                }
-               else{
+               else if (data == "Created"){
                 document.getElementById("ll").textContent="Form is not published till now";
                 document.getElementById("previewlink").href="https://pcniftemt.pages.dev/preview-form/?form="+idvalue
                 document.getElementById("previewlink").style.display="initial";
