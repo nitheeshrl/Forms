@@ -6,7 +6,7 @@
     <meta name="viewport" content="widthdevice-width, initial-scale=1">
     <link rel="icon" href="white_logo.png" type="image/x-icon">
 
-    <title id="formtitle">Placement Form</title>  
+    <title id="formtitle">Form</title>  
     <script>
       const keyvalues = window.location.search;
 const value = new URLSearchParams(keyvalues);
@@ -69,6 +69,7 @@ console.log(idvalue)
     function fetchq(){
             fetch(
           "https://script.google.com/macros/s/AKfycbwBKrmx61rNpYFhGmUrYKhKEvkZeHffij3XEp8twQFRUYfc-56AV6apwwqXrpliSt4p/exec",
+          
           {
             redirect: "follow",
             method: "POST",
@@ -201,6 +202,7 @@ console.log(formDataString)
         // Send a POST request to your Google Apps Script
         fetch(
           "https://script.google.com/macros/s/AKfycbyKwgo9KpuGCu6Y11WimoMTU0QsoV-VzXuAJXj98qmXGYyvkophCFCSnM2KU1z3Wd_rNA/exec",
+          
           {
             redirect: "follow",
             method: "POST",
