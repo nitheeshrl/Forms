@@ -51,7 +51,7 @@ var renonam = renoval + ordd;
 
     <h1 style="text-align: center;">Successfully Requested</h1>
     <div   id="dfiled" style="align-content:normal; margin-left: 0px;margin-right: auto; margin-top: 30px;"><p style="text-align: left;">
-        <div ></div> <span id = "status">The details are successfully updated.</span><br><br><span id = "status2"></span> </p></div>
+        <div ></div> <span id = "status"></span><br><br><span id = "status2"></span> </p></div>
 
         <div id="load" class="load" > 
             <div class="loader" id="loader"> 
@@ -66,5 +66,8 @@ var renonam = renoval + ordd;
 
 
 </section>
+<script>
+    document.getElementById("status").innerHTML = "<span>The details are successfully updated..<br> <br> Once, it is approved or declined you will the mail. So, kindly check your mail. <br> <br> The Request ID is <b>"+reid+"</b><br><br> Use this ID for checking status.<br> <br>This is "+renonam+" request today. Only 5 requests are allowed per day.</span>";
+</script>
 </body>
 </html>
