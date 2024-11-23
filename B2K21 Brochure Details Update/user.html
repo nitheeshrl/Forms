@@ -667,7 +667,7 @@ sessionStorage.setItem("datastring",formDataString);
   
 var cr = result1.data2;
 var spilcr = cr.split("/");
-sessionStorage.setItem("reno",spilcr[2]);
+sessionStorage.setItem("reno",spilcr[3]);
 console.log(spilcr)
 if (spilcr[2]=="Exceeded"){
   window.location='exceed.html';
@@ -677,6 +677,8 @@ else if (spilcr[2]=="Updating"){
 }
 else if (spilcr[2]=="Direct"){
   sessionStorage.setItem("reid",spilcr[1]);
+  document.getElementById("bt").disabled = false;
+    document.getElementById("form").reset();
   window.location='submission cell.html';
 }
 else{
