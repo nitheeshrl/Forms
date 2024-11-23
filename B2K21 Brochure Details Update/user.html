@@ -675,6 +675,10 @@ if (spilcr[2]=="Exceeded"){
 else if (spilcr[2]=="Updating"){
   window.location='maintenance.html';
 }
+else if (spilcr[2]=="Direct"){
+  sessionStorage.setItem("reid",spilcr[1]);
+  window.location='submission cell.html';
+}
 else{
 sessionStorage.setItem("reid",spilcr[1]);
 console.log(spilcr)

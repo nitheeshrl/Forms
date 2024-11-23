@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="widthdevice-width, initial-scale=1">
+    <link rel="icon" href="white_logo.png" type="image/x-icon">
+    <title>Successfully Requested</title>  
+    <link rel="stylesheet" href="style.css" />
+
+</head>    
+<body>
+    <script>
+      var fetchurl ="";
+      var reno = sessionStorage.getItem("reno");
+      console.log(reno);
+      var renoval = Number( reno) +1;
+      console.log(renoval);
+      function getOrdinal(n) {
+  let ord = 'th';
+
+  if (n % 10 == 1 && n % 100 != 11)
+  {
+    ord = 'st';
+  }
+  else if (n % 10 == 2 && n % 100 != 12)
+  {
+    ord = 'nd';
+  }
+  else if (n % 10 == 3 && n % 100 != 13)
+  {
+    ord = 'rd';
+  }
+
+  return ord;
+}
+var ordd = getOrdinal(renoval)
+var renonam = renoval + ordd;
+        var name = sessionStorage.getItem("name");
+        var reid = sessionStorage.getItem("reid");
+    </script>
+<section class="header1">
+<div>
+<img src="white_logo.png" alt="">
+</div>
+<div>
+<h1>NIFTEM-T Placement Cell</h1>
+</div>
+</section>
+<section class="msg" >
+
+    <h1 style="text-align: center;">Successfully Requested</h1>
+    <div   id="dfiled" style="align-content:normal; margin-left: 0px;margin-right: auto; margin-top: 30px;"><p style="text-align: left;">
+        <div ></div> <span id = "status">The details are successfully updated.</span><br><br><span id = "status2"></span> </p></div>
+
+        <div id="load" class="load" > 
+            <div class="loader" id="loader"> 
+          
+              </div> 
+              <div
+                id="message"
+              class="message"
+              style="width: 350px;"
+                ></div>
+            </div> 
+
+
+</section>
+</body>
+</html>

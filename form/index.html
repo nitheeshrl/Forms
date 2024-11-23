@@ -36,6 +36,9 @@ console.log(idvalue)
        .then((response) => response.json())
        .then(({ data }) => {
         console.log(data)
+        if (data == "Not Found"){
+          alert("Form not found")
+        }
            if (data == "Live"){
    console.log("ok")
    if(formstatus=="Form Fetched"){
