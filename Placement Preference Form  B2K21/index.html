@@ -17,16 +17,16 @@
        .then((response) => response.json())
        .then(({ data }) => {
            console.log(data)
-           if (data == "Live"){
+         //  if (data == "Live"){
    
                document.getElementById("frqa").style.display="initial";
                document.getElementById("ll").textContent="";
    
-               }
-               else if (data == "Inactive"){
+           //    }
+           /*    else if (data == "Inactive"){
                  document.getElementById("frqa").style.display="none";
                  window.location='end.html';
-               }
+               }*/
        })
        .catch((error) => console.error('!!!!!!!!', error));
    }
