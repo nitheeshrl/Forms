@@ -16,6 +16,7 @@
    fetch(`${url}?header=${val}`)
        .then((response) => response.json())
        .then(({ data }) => {
+           console.log(data)
            if (data == "Live"){
    
                document.getElementById("frqa").style.display="initial";
