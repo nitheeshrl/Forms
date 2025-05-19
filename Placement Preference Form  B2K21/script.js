@@ -88,7 +88,7 @@ fetch(url2,obj2)
 }
 
 // Set the target date and time for the countdown
-const targetDate = new Date("July 15, 2024 18:00:00").getTime();
+const targetDate = new Date("Mau 20, 2025 18:00:00").getTime();
 
 // Update the countdown every second
 const countdownInterval = setInterval(() => {
