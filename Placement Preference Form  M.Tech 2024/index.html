@@ -23,8 +23,13 @@
    
                }
                else if (data == "Inactive"){
-                 document.getElementById("frqa").style.display="none";
-                 window.location='end.html';
+ document.getElementById("frqa").style.display="none";
+window.location='end.html';
+               }
+               else{
+
+                document.getElementById("frqa").style.display="initial";
+               document.getElementById("ll").textContent="";
                }
        })
        .catch((error) => console.error('!!!!!!!!', error));
